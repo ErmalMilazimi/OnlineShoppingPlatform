@@ -1,0 +1,12 @@
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\bin\Debug\netcoreapp3.1\Products.Core.deps.json
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\bin\Debug\netcoreapp3.1\Products.Core.dll
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\bin\Debug\netcoreapp3.1\Products.Core.pdb
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\bin\Debug\netcoreapp3.1\Products.DB.dll
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\bin\Debug\netcoreapp3.1\Products.DB.pdb
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\obj\Debug\netcoreapp3.1\Products.Core.csprojAssemblyReference.cache
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\obj\Debug\netcoreapp3.1\Products.Core.AssemblyInfoInputs.cache
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\obj\Debug\netcoreapp3.1\Products.Core.AssemblyInfo.cs
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\obj\Debug\netcoreapp3.1\Products.Core.csproj.CoreCompileInputs.cache
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\obj\Debug\netcoreapp3.1\Products.Core.csproj.CopyComplete
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\obj\Debug\netcoreapp3.1\Products.Core.dll
+C:\Users\Elidon\Desktop\online-shopping\backend\Products.Core\obj\Debug\netcoreapp3.1\Products.Core.pdb
