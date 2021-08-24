@@ -10,3 +10,15 @@ C:\Users\Elidon\Desktop\online-shopping\backend\Products.DB\obj\Debug\netcoreapp
 C:\Users\Elidon\Desktop\online-shopping\backend\Products.DB\obj\Debug\netcoreapp3.1\Products.DB.dll
 C:\Users\Elidon\Desktop\online-shopping\backend\Products.DB\obj\Debug\netcoreapp3.1\Products.DB.pdb
 C:\Users\Elidon\Desktop\online-shopping\backend\Products.DB\obj\Debug\netcoreapp3.1\Products.DB.genruntimeconfig.cache
+C:\Users\Elidon\Desktop\online\backend\Products.DB\bin\Debug\netcoreapp3.1\Products.DB.deps.json
+C:\Users\Elidon\Desktop\online\backend\Products.DB\bin\Debug\netcoreapp3.1\Products.DB.runtimeconfig.json
+C:\Users\Elidon\Desktop\online\backend\Products.DB\bin\Debug\netcoreapp3.1\Products.DB.runtimeconfig.dev.json
+C:\Users\Elidon\Desktop\online\backend\Products.DB\bin\Debug\netcoreapp3.1\Products.DB.dll
+C:\Users\Elidon\Desktop\online\backend\Products.DB\bin\Debug\netcoreapp3.1\Products.DB.pdb
+C:\Users\Elidon\Desktop\online\backend\Products.DB\obj\Debug\netcoreapp3.1\Products.DB.csprojAssemblyReference.cache
+C:\Users\Elidon\Desktop\online\backend\Products.DB\obj\Debug\netcoreapp3.1\Products.DB.AssemblyInfoInputs.cache
+C:\Users\Elidon\Desktop\online\backend\Products.DB\obj\Debug\netcoreapp3.1\Products.DB.AssemblyInfo.cs
+C:\Users\Elidon\Desktop\online\backend\Products.DB\obj\Debug\netcoreapp3.1\Products.DB.csproj.CoreCompileInputs.cache
+C:\Users\Elidon\Desktop\online\backend\Products.DB\obj\Debug\netcoreapp3.1\Products.DB.dll
+C:\Users\Elidon\Desktop\online\backend\Products.DB\obj\Debug\netcoreapp3.1\Products.DB.pdb
+C:\Users\Elidon\Desktop\online\backend\Products.DB\obj\Debug\netcoreapp3.1\Products.DB.genruntimeconfig.cache

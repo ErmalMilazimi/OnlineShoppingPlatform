@@ -23,10 +23,36 @@ namespace backend.Controllers
             _productsServices = productsServices;
         }
 
+        [HttpGet]
+        public IActionResult GetProducts()
+        {
+            return Ok(_productsServices.GetProducts());
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetProduct(int id)
+        {
+            return Ok(_productsServices.GetProduct(id));
+        }
+
         [HttpPost]
         public IActionResult CreateProduct(Product product)
         {
             return Ok(_productsServices.CreateProduct(product));
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProduct(int id)
+        {
+            _productsServices.DeleteProduct(id);
+            return Ok("Product has been deleted!");
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult EditProduct(int id, [FromBody] Product product)
+        {
+            _productsServices.EditProduct(id, product);
+            return Ok("Product Edited!");
         }
     }
 }

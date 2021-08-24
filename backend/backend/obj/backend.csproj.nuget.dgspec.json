@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\backend\\backend.csproj": {}
+    "C:\\Users\\Elidon\\Desktop\\online\\backend\\backend\\backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\backend\\backend.csproj": {
+    "C:\\Users\\Elidon\\Desktop\\online\\backend\\backend\\backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\backend\\backend.csproj",
+        "projectUniqueName": "C:\\Users\\Elidon\\Desktop\\online\\backend\\backend\\backend.csproj",
         "projectName": "backend",
-        "projectPath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\backend\\backend.csproj",
+        "projectPath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\backend\\backend.csproj",
         "packagesPath": "C:\\Users\\Elidon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\backend\\obj\\",
+        "outputPath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.Core\\Products.Core.csproj": {
-                "projectPath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.Core\\Products.Core.csproj"
+              "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.Core\\Products.Core.csproj": {
+                "projectPath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.Core\\Products.Core.csproj"
               },
-              "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.DB\\Products.DB.csproj": {
-                "projectPath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.DB\\Products.DB.csproj"
+              "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.DB\\Products.DB.csproj": {
+                "projectPath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.DB\\Products.DB.csproj"
               }
             }
           }
@@ -80,14 +80,14 @@
         }
       }
     },
-    "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.Core\\Products.Core.csproj": {
+    "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.Core\\Products.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.Core\\Products.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.Core\\Products.Core.csproj",
         "projectName": "Products.Core",
-        "projectPath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.Core\\Products.Core.csproj",
+        "projectPath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.Core\\Products.Core.csproj",
         "packagesPath": "C:\\Users\\Elidon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.Core\\obj\\",
+        "outputPath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -108,8 +108,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.DB\\Products.DB.csproj": {
-                "projectPath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.DB\\Products.DB.csproj"
+              "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.DB\\Products.DB.csproj": {
+                "projectPath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.DB\\Products.DB.csproj"
               }
             }
           }
@@ -142,14 +142,14 @@
         }
       }
     },
-    "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.DB\\Products.DB.csproj": {
+    "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.DB\\Products.DB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.DB\\Products.DB.csproj",
+        "projectUniqueName": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.DB\\Products.DB.csproj",
         "projectName": "Products.DB",
-        "projectPath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.DB\\Products.DB.csproj",
+        "projectPath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.DB\\Products.DB.csproj",
         "packagesPath": "C:\\Users\\Elidon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.DB\\obj\\",
+        "outputPath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.DB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

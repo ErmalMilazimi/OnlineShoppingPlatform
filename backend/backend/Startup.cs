@@ -32,6 +32,11 @@ namespace backend
             services.AddDbContext<AppDbContext>();
 
             services.AddTransient<iProductsServices, ProductsServices>();
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("BackEndPolicy", builder => builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod());
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +50,8 @@ namespace backend
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("BackEndPolicy");
 
             app.UseAuthorization();
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dyLp7XTs66NgGZLfJ0ZoxFXiojuCgkw9pX2bhYPQWo1eYMSifzWmEEiBDydU2AytANhhqeOAN1JjRXuIao5q4w==",
+  "dgSpecHash": "eq2Du7x9Eat8KAqpNZ0a/4LXRU/IHxHd/C1GvEsDWqzIJOJRokcjLsstcN9t90eJSeD9QLmla8wb9q2+DyTZOw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.DB\\Products.DB.csproj",
+  "projectFilePath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.DB\\Products.DB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elidon\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

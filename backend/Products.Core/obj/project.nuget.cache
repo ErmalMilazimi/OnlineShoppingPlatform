@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fmIE2tdH2NsfdbyINnOqsMtfGsBQs3q1ez2pLVV+kBCwEPBcjEdkldSK2NuoF7bdUEC3ddzC1S2IDvKdVA7buw==",
+  "dgSpecHash": "Et6tdLGbnCqBuZ91IxwxYsXTXIneu16TX9hfSYQ/275De+A0Gu9TKsDmuTjbr73S/V8IPQbo9MmyktN1yuLrFw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elidon\\Desktop\\online-shopping\\backend\\Products.Core\\Products.Core.csproj",
+  "projectFilePath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\Products.Core\\Products.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
