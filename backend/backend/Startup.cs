@@ -35,7 +35,7 @@ namespace backend
 
             services.AddCors(options =>
             {
-                options.AddPolicy("BackEndPolicy", builder => builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod());
+                options.AddPolicy("backend", builder => builder.WithOrigins("*").AllowAnyHeader().AllowAnyMethod());
             });
         }
 
@@ -51,7 +51,7 @@ namespace backend
 
             app.UseRouting();
 
-            app.UseCors("BackEndPolicy");
+            app.UseCors("backend");
 
             app.UseAuthorization();
 

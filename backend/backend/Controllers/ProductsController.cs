@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Products.Core;
 using Products.DB;
@@ -16,8 +17,9 @@ namespace backend.Controllers
 
         private readonly ILogger<ProductsController> _logger;
         private iProductsServices _productsServices;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ProductsController(ILogger<ProductsController> logger, iProductsServices productsServices)
+        public ProductsController(ILogger<ProductsController> logger, iProductsServices productsServices, IWebHostEnvironment webHostEnvironment)
         {
             _logger = logger;
             _productsServices = productsServices;
