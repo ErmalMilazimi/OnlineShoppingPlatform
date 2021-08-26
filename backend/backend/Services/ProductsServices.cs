@@ -55,6 +55,7 @@ namespace backend.Services
             editProduct.Category = product.Category;
             editProduct.Price= product.Price;
             editProduct.Rating = product.Rating;
+            editProduct.ImagePath = product.ImagePath;
             _context.SaveChanges();
         }
     }

@@ -69,9 +69,9 @@ function Product() {
       {product.map((prod) => (
         <div class="card" style={{width: "18rem"}} key={prod.id}>
         Image: <img class="card-img-top" src={`/Images/${prod.imagePath}`}></img>
-          <div class="card-body">zz
+          <div class="card-body">
           <h1>Name: {prod.name}</h1>
-          <p class="card-text">Category: {prod.description}</p>
+          <p class="card-text">Description: {prod.description}</p>
           </div>
         </div>
       ))}

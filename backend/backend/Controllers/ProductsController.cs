@@ -50,6 +50,14 @@ namespace backend.Controllers
         [HttpPost]
         public async Task<IActionResult> Creates([FromForm] Product product)
         {
+            await images(product);
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+            return Ok("Product has been added!");
+        }
+
+        public async Task images(Product product)
+        {
             var files = HttpContext.Request.Form.Files;
             foreach (var Image in files)
             {
@@ -69,9 +77,6 @@ namespace backend.Controllers
                     }
                 }
             }
-            _context.Products.Add(product);
-            await _context.SaveChangesAsync();
-            return Ok("added");
         }
 
         [HttpDelete("{id}")]
@@ -82,9 +87,19 @@ namespace backend.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult EditProduct(int id, [FromBody] Product product)
+        public async Task<IActionResult> EditProduct(int id, [FromForm] Product product)
         {
-            _productsServices.EditProduct(id, product);
+            await images(product);
+
+            var editProduct = _context.Products.First(p => p.Id == id);
+            editProduct.Name = product.Name;
+            editProduct.Description = product.Description;
+            editProduct.Category = product.Category;
+            editProduct.Price = product.Price;
+            editProduct.Rating = product.Rating;
+            editProduct.ImagePath = product.ImagePath;
+            
+            await _context.SaveChangesAsync();
             return Ok("Product Edited!");
         }
     }
