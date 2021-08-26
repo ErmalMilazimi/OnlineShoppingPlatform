@@ -8,7 +8,6 @@ import TopCompany from "./components/topCompany/topCompany";
 
 function App() {
   return (
-<<<<<<< HEAD
     <Router>
     <div className="App">
       <Switch>
@@ -17,12 +16,6 @@ function App() {
       </Switch>
     </div>
     </Router>
-=======
-    <div className="App">
-      <Header />
-      <TopCompany />
-    </div>
->>>>>>> 18949d5 (added components)
   );
 }
 
