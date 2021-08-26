@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../nav/nav";
+import Nav from '../nav/nav'
 import "./header.scss";
 import banner from "../../assets/img/banner.jpeg";
 
