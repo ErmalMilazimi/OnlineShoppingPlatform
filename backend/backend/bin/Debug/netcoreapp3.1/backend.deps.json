@@ -31,9 +31,10 @@
     ".NETCoreApp,Version=v3.1": {
       "backend/1.0.0": {
         "dependencies": {
+          "Microsoft.EntityFrameworkCore": "5.0.9",
           "Microsoft.EntityFrameworkCore.Design": "5.0.9",
-          "Products.Core": "1.0.0",
-          "Products.DB": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9",
+          "Microsoft.EntityFrameworkCore.Tools": "5.0.9",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -476,6 +477,11 @@
         },
         "compile": {
           "lib/netstandard2.1/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/5.0.9": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "5.0.9"
         }
       },
       "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
@@ -1389,29 +1395,6 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0"
-        }
-      },
-      "Products.Core/1.0.0": {
-        "dependencies": {
-          "Products.DB": "1.0.0"
-        },
-        "runtime": {
-          "Products.Core.dll": {}
-        },
-        "compile": {
-          "Products.Core.dll": {}
-        }
-      },
-      "Products.DB/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": "5.0.9",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.9"
-        },
-        "runtime": {
-          "Products.DB.dll": {}
-        },
-        "compile": {
-          "Products.DB.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3112,6 +3095,13 @@
       "path": "microsoft.entityframeworkcore.sqlserver/5.0.9",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.5.0.9.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.Tools/5.0.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BdNfn6IzyD6r6XpjnOn7HuWKryVzT6TnDIH8MZLD3d/wLG24V0BYB1Dyr6wnAqgGXXCZxJf77YES5nobge56aA==",
+      "path": "microsoft.entityframeworkcore.tools/5.0.9",
+      "hashPath": "microsoft.entityframeworkcore.tools.5.0.9.nupkg.sha512"
+    },
     "Microsoft.Extensions.Caching.Abstractions/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3713,16 +3703,6 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
-    },
-    "Products.Core/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Products.DB/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
       "type": "referenceassembly",

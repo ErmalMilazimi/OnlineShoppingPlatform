@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using backend.Models;
+using backend.Services;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Products.Core;
-using Products.DB;
 using System;
-using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,11 +19,14 @@ namespace backend.Controllers
         private readonly ILogger<ProductsController> _logger;
         private iProductsServices _productsServices;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private AppDbContext _context;
 
-        public ProductsController(ILogger<ProductsController> logger, iProductsServices productsServices, IWebHostEnvironment webHostEnvironment)
+        public ProductsController(ILogger<ProductsController> logger, iProductsServices productsServices, IWebHostEnvironment webHostEnvironment, AppDbContext context)
         {
             _logger = logger;
             _productsServices = productsServices;
+            _webHostEnvironment = webHostEnvironment;
+            _context = context;
         }
 
         [HttpGet]
@@ -37,10 +41,37 @@ namespace backend.Controllers
             return Ok(_productsServices.GetProduct(id));
         }
 
+        //[HttpPost]
+        //public IActionResult CreateProduct(Product product)
+        //{
+        //    return Ok(_productsServices.CreateProduct(product));
+        //}
+
         [HttpPost]
-        public IActionResult CreateProduct(Product product)
+        public async Task<IActionResult> Creates([FromForm] Product product)
         {
-            return Ok(_productsServices.CreateProduct(product));
+            var files = HttpContext.Request.Form.Files;
+            foreach (var Image in files)
+            {
+                if (Image != null && Image.Length > 0)
+                {
+                    var file = Image;
+                    var uploads = Path.Combine(_webHostEnvironment.ContentRootPath, "Images");
+                    if (file.Length > 0)
+                    {
+                        var fileName = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(file.FileName);
+                        using (var fileStream = new FileStream(Path.Combine(uploads, fileName), FileMode.Create))
+                        {
+                            await file.CopyToAsync(fileStream);
+                            product.ImagePath = fileName;
+                        }
+
+                    }
+                }
+            }
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+            return Ok("added");
         }
 
         [HttpDelete("{id}")]

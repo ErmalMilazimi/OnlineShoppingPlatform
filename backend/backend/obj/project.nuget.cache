@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XnBbUXusbIlQmzFNb31exR5uFL01Odp7p/iGGkq7WutsP8/JvsW4qOPrGr5upRn//Xb0EC/n9ZFtN2mHwEWLiw==",
+  "dgSpecHash": "POmQnGaIpLENraD6ys/vNTwR5/VFSG9sU5Gd3Xsx+nIDp4JIBYGVP5Y5H5KD8nBRDh6UH4papdC7OftjvQXNgw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\backend\\backend.csproj",
+  "projectFilePath": "C:\\Users\\Elidon\\Desktop\\on\\backend\\backend\\backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elidon\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
@@ -14,6 +14,7 @@
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.9\\microsoft.entityframeworkcore.design.5.0.9.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.9\\microsoft.entityframeworkcore.relational.5.0.9.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.9\\microsoft.entityframeworkcore.sqlserver.5.0.9.nupkg.sha512",
+    "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.9\\microsoft.entityframeworkcore.tools.5.0.9.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",

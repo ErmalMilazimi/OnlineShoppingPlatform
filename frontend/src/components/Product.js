@@ -38,11 +38,20 @@ function Product() {
     console.log(res.data);
     setProduct(res.data);
   }, []);
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    console.log('clicked')
+    const formData = new FormData()
+    formData.append('Name', 'ds')
+    const res = await axios.post("/products", formData);
+    console.log('sds', res.data)
+  }
   return (
     <div>
-      <form>
+      <form onSubmit={handleFormSubmit}>
         <img src={values.imageSrc}></img>
-        <div class="form-group">
+        <div class="form-group" >
           <label for="exampleFormControlFile1">Example file input</label>
           <input
             type="file"
@@ -51,12 +60,20 @@ function Product() {
             class="form-control-file"
             id="exampleFormControlFile1"
           ></input>
+          
         </div>
+        <button type="submit">sds</button>
       </form>
+      
+      
       {product.map((prod) => (
-        <h1 key={prod.id}>
-          {prod.name} {prod.category}
-        </h1>
+        <div class="card" style={{width: "18rem"}} key={prod.id}>
+        Image: <img class="card-img-top" src={`/Images/${prod.imagePath}`}></img>
+          <div class="card-body">zz
+          <h1>Name: {prod.name}</h1>
+          <p class="card-text">Category: {prod.description}</p>
+          </div>
+        </div>
       ))}
     </div>
   );
