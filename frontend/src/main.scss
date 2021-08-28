@@ -8,3 +8,13 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #999999;
+}

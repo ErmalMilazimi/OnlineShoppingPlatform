@@ -1,13 +1,19 @@
 import React from "react";
 import "./nav.scss";
 import Logo from "../../assets/img/logoTxt.png";
+import LogReg from "../login/logReg";
 
 function nav() {
+  const showLogReg = () => {
+    document.querySelector(".logReg").style.display = "flex";
+    document.querySelector("body").style.overflow = "hidden";
+  };
   return (
     <nav
       className="item-container navbar navbar-expand-lg navbar-dark"
       id="navbar-menu"
     >
+      <LogReg />
       <div className="container">
         <a href="#" className="navbar-brand">
           <img src={Logo} alt="" className="nav-logo" />
@@ -43,9 +49,9 @@ function nav() {
               </a>
             </li>
             <li className="nav-item mx-1">
-              <a href="#" className="nav-link" id="signlog">
-                SIGN UP
-              </a>
+              <div className="nav-link" id="signlog" onClick={showLogReg}>
+                LOG IN
+              </div>
             </li>
             <li className="nav-item mx-1">
               <a href="#" className="nav-link">
