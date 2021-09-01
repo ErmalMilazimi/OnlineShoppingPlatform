@@ -115,10 +115,6 @@ C:\Users\Elidon\Desktop\online\backend\backend\bin\Debug\netcoreapp3.1\runtimes\
 C:\Users\Elidon\Desktop\online\backend\backend\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\Elidon\Desktop\online\backend\backend\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Elidon\Desktop\online\backend\backend\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Elidon\Desktop\online\backend\backend\bin\Debug\netcoreapp3.1\Products.Core.dll
-C:\Users\Elidon\Desktop\online\backend\backend\bin\Debug\netcoreapp3.1\Products.DB.dll
-C:\Users\Elidon\Desktop\online\backend\backend\bin\Debug\netcoreapp3.1\Products.Core.pdb
-C:\Users\Elidon\Desktop\online\backend\backend\bin\Debug\netcoreapp3.1\Products.DB.pdb
 C:\Users\Elidon\Desktop\online\backend\backend\obj\Debug\netcoreapp3.1\backend.csprojAssemblyReference.cache
 C:\Users\Elidon\Desktop\online\backend\backend\obj\Debug\netcoreapp3.1\backend.AssemblyInfoInputs.cache
 C:\Users\Elidon\Desktop\online\backend\backend\obj\Debug\netcoreapp3.1\backend.AssemblyInfo.cs
@@ -195,3 +191,4 @@ C:\Users\Elidon\Desktop\on\backend\backend\obj\Debug\netcoreapp3.1\backend.dll
 C:\Users\Elidon\Desktop\on\backend\backend\obj\Debug\netcoreapp3.1\backend.pdb
 C:\Users\Elidon\Desktop\on\backend\backend\obj\Debug\netcoreapp3.1\backend.genruntimeconfig.cache
 C:\Users\Elidon\Desktop\on\backend\backend\obj\Debug\netcoreapp3.1\backend.csprojAssemblyReference.cache
+C:\Users\Elidon\Desktop\online\backend\backend\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll

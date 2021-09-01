@@ -34,6 +34,7 @@ namespace backend
             services.AddDbContext<AppDbContext>();
 
             services.AddTransient<iProductsServices, ProductsServices>();
+            services.AddTransient<iUserServices, UserServices>();
 
             services.AddCors(options =>
             {

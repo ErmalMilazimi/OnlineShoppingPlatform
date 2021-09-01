@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "POmQnGaIpLENraD6ys/vNTwR5/VFSG9sU5Gd3Xsx+nIDp4JIBYGVP5Y5H5KD8nBRDh6UH4papdC7OftjvQXNgw==",
+  "dgSpecHash": "EHeikYDvpP4SnhuhSIShd/4QlEHsPzYPWKfa1zUuMWcGcFHCeB7+/Thjo/ZWbL7YBvDkYkoRlq/Kf3GVk9Ybkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Elidon\\Desktop\\on\\backend\\backend\\backend.csproj",
+  "projectFilePath": "C:\\Users\\Elidon\\Desktop\\online\\backend\\backend\\backend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Elidon\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Elidon\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
