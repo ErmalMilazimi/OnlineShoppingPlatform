@@ -11,5 +11,6 @@ namespace backend.Services
         User CreateUser(User user);
         List<User> getUsers();
         User getByEmail(string email);
+        User getById(int id);
     }
 }

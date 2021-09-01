@@ -31,5 +31,10 @@ namespace backend.Services
         {
             return _context.Users.FirstOrDefault(u => u.Email == email);
         }
+
+        public User getById(int id)
+        {
+            return _context.Users.FirstOrDefault(u => u.Id == id);
+        }
     }
 }

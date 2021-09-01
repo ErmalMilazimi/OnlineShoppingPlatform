@@ -59,7 +59,29 @@ namespace backend.Controllers
 
             var jwt = _jwtService.Generate(user.Id);
 
+            Response.Headers.Append("jwt", jwt);
+
             return Ok(new { jwt });
+        }
+
+        [HttpGet(template:"user")]
+        public IActionResult User()
+        {
+            try
+            {
+                var jwt = Request.Headers["jwt"];
+                var token = _jwtService.Verify(jwt);
+
+                int userId = int.Parse(token.Issuer);
+
+                var user = _userServices.getById(userId);
+
+                return Ok(user);
+            } catch (Exception e)
+            {
+                return Unauthorized();
+            }
+            
         }
     }
 }
