@@ -1,3 +1,4 @@
+using backend.JwtAuth;
 using backend.Models;
 using backend.Services;
 using Microsoft.AspNetCore.Builder;
@@ -35,6 +36,7 @@ namespace backend
 
             services.AddTransient<iProductsServices, ProductsServices>();
             services.AddTransient<iUserServices, UserServices>();
+            services.AddTransient<JwtService>();
 
             services.AddCors(options =>
             {

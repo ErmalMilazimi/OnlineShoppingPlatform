@@ -1,4 +1,5 @@
-﻿using backend.Models;
+﻿using backend.JwtAuth;
+using backend.Models;
 using backend.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,9 +15,11 @@ namespace backend.Controllers
     public class UserController : ControllerBase
     {
         private readonly iUserServices _userServices;
-        public UserController(iUserServices userService)
+        private readonly JwtService _jwtService;
+        public UserController(iUserServices userService, JwtService jwtService)
         {
             _userServices = userService;
+            _jwtService = jwtService;
         }
         [HttpGet]
         public IActionResult GetUsers()
@@ -54,7 +57,9 @@ namespace backend.Controllers
                 return BadRequest("Invalid Password");
             }
 
-            return Ok(user);
+            var jwt = _jwtService.Generate(user.Id);
+
+            return Ok(new { jwt });
         }
     }
 }
