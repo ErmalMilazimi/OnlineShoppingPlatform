@@ -1,7 +1,7 @@
 import React from "react";
 import Nav from "../nav/nav";
 import "./header.scss";
-import banner from "../../assets/img/banner.jpeg";
+import banner from "../../assets/img/banner.webp";
 
 function header() {
   return (

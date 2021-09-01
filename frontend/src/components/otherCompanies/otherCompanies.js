@@ -1,19 +1,19 @@
 import React from "react";
 import "./otherCompanies.scss";
-import Company1 from "../../assets/img/otherC1.png";
-import Company2 from "../../assets/img/otherC2.png";
-import Company3 from "../../assets/img/otherC3.png";
-import Company4 from "../../assets/img/otherC4.png";
-import Company5 from "../../assets/img/otherC5.png";
-import Company6 from "../../assets/img/otherC6.png";
-import Company7 from "../../assets/img/otherC7.png";
-import Company8 from "../../assets/img/otherC8.png";
+import Company1 from "../../assets/img/otherC1.webp";
+import Company2 from "../../assets/img/otherC2.webp";
+import Company3 from "../../assets/img/otherC3.webp";
+import Company4 from "../../assets/img/otherC4.webp";
+import Company5 from "../../assets/img/otherC5.webp";
+import Company6 from "../../assets/img/otherC6.webp";
+import Company7 from "../../assets/img/otherC7.webp";
+import Company8 from "../../assets/img/otherC8.webp";
 
 function otherCompanies() {
   return (
     <div className="container">
       <section className="otherCompanies">
-        <h4 className="otherCompanies-title">Firma te tjera</h4>
+        {/* <h4 className="otherCompanies-title">Firma te tjera</h4> */}
         <section className="otherCompanies-company">
           <section className="otherCompanies-company-img_container">
             <img src={Company1} alt="other company img" />

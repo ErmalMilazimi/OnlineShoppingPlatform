@@ -1,9 +1,9 @@
 import React from "react";
 import "./topCompany.scss";
-import NikeLogo from "../../assets/img/nike_logo.png";
-import AdidasLogo from "../../assets/img/adidas_logo.png";
+import NikeLogo from "../../assets/img/nike_logo.webp";
+import AdidasLogo from "../../assets/img/adidas_logo.webp";
 import PalmangelsLogo from "../../assets/img/palmangels_logo.webp";
-import LtbLogo from "../../assets/img/ltb_logo.png";
+import LtbLogo from "../../assets/img/ltb_logo.webp";
 
 function topCompany() {
   return (

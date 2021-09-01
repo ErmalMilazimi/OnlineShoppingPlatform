@@ -1,6 +1,6 @@
 import React from "react";
 import "./aboutUsCmp.scss";
-import OnlineShopping from "../../assets/img/online-shopping.png";
+import OnlineShopping from "../../assets/img/online-shopping.webp";
 
 function aboutUsCmp() {
   return (
