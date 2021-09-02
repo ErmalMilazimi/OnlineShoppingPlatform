@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./login.scss";
 import Logo from "../../assets/img/logoTxt.svg";
 import CloseLogo from "../../assets/img/close.svg";
-function logReg() {
+function logReg(props) {
   const CloseLogReg = () => {
     document.querySelector(".logReg").style.display = "none";
     document.querySelector("body").style.overflow = "auto";
@@ -23,7 +23,7 @@ function logReg() {
     }
   };
   return (
-    <div className="logReg">
+    <div className="logReg" style={props.style}>
       <div className="form-group">
         <div
           className="closeForm"

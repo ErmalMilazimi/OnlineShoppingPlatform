@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./nav.scss";
 import Logo from "../../assets/img/logoTxt.png";
 import LogReg from "../login/logReg";
 
-function nav() {
+function Nav() {
+  const [navBar, setNavBar] = useState(false);
+  const changeBackground = () => {
+    if (window.scrollY >= 100) {
+      setNavBar(true);
+    } else {
+      setNavBar(false);
+    }
+  };
+  window.addEventListener("scroll", changeBackground);
+
+  // const [logReg, setLogReg] = useState(false);
+  // const logregClicked = () => {
+  //   console.log("object");
+  //   setLogReg(true);
+  // };
+
   const showLogReg = () => {
     document.querySelector(".logReg").style.display = "flex";
     document.querySelector("body").style.overflow = "hidden";
   };
   return (
     <nav
-      className="item-container navbar navbar-expand-lg navbar-dark"
+      className={
+        navBar
+          ? "item-container navbar navbar-expand-lg navbar-dark active"
+          : "item-container navbar navbar-expand-lg navbar-dark"
+      }
       id="navbar-menu"
     >
       <LogReg />
@@ -65,4 +85,4 @@ function nav() {
   );
 }
 
-export default nav;
+export default Nav;

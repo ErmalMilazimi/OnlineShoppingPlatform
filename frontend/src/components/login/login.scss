@@ -10,6 +10,9 @@
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   z-index: 999;
+  &.active {
+    display: flex;
+  }
   .form-group {
     position: relative;
     padding: 15px;

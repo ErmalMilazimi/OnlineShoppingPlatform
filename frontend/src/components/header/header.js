@@ -7,7 +7,6 @@ function header() {
   return (
     <div className="header" style={{ backgroundImage: `url(${banner})` }}>
       <Nav />
-      <div className="container"></div>
     </div>
   );
 }
