@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./nav.scss";
 import Logo from "../../assets/img/logoTxt.png";
 import LogReg from "../login/logReg";
@@ -54,19 +55,19 @@ function Nav() {
               </a>
             </li>
             <li className="nav-item mx-1">
-              <a href="#" className="nav-link">
+              <Link className="nav-link" to="/Items">
                 ITEMS
-              </a>
+              </Link>
             </li>
             <li className="nav-item mx-1">
-              <a href="#" className="nav-link">
+              <Link className="nav-link" to="/ ">
                 ABOUT US
-              </a>
+              </Link>
             </li>
             <li className="nav-item mx-1">
-              <a href="#" className="nav-link">
+              <Link className="nav-link" to="/ ">
                 CONTACT US
-              </a>
+              </Link>
             </li>
             <li className="nav-item mx-1">
               <div className="nav-link" id="signlog" onClick={showLogReg}>
@@ -74,9 +75,9 @@ function Nav() {
               </div>
             </li>
             <li className="nav-item mx-1">
-              <a href="#" className="nav-link">
+              <Link className="nav-link" to="/ ">
                 CART
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
