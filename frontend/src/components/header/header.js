@@ -1,11 +1,12 @@
 import React from "react";
 import Nav from "../nav/nav";
 import "./header.scss";
-import banner from "../../assets/img/banner.webp";
 
-function header() {
+function header(props) {
+  const classList = props.headerClassList ? "second-header" : "";
+
   return (
-    <div className="header" style={{ backgroundImage: `url(${banner})` }}>
+    <div className={`${classList} header`}>
       <Nav />
     </div>
   );

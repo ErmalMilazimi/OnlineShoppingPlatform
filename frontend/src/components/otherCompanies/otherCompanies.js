@@ -10,61 +10,58 @@ import Company7 from "../../assets/img/otherC7.webp";
 import Company8 from "../../assets/img/otherC8.webp";
 
 function otherCompanies() {
+  const data = [
+    {
+      img: Company1,
+      title: "Levi's",
+    },
+    {
+      img: Company2,
+      title: "Abercrombie & Fitch",
+    },
+    {
+      img: Company3,
+      title: "H&M",
+    },
+    {
+      img: Company4,
+      title: "Timberland",
+    },
+    {
+      img: Company5,
+      title: "ZARA",
+    },
+    {
+      img: Company6,
+      title: "GAP",
+    },
+    {
+      img: Company7,
+      title: "Gibson",
+    },
+    {
+      img: Company8,
+      title: "Christian Dior",
+    },
+  ];
   return (
     <div className="container">
       <section className="otherCompanies">
-        {/* <h4 className="otherCompanies-title">Firma te tjera</h4> */}
-        <section className="otherCompanies-company">
-          <section className="otherCompanies-company-img_container">
-            <img src={Company1} alt="other company img" />
-          </section>
-          <h4>Levi's</h4>
-        </section>
-        <section className="otherCompanies-company">
-          <section className="otherCompanies-company-img_container">
-            <img src={Company2} alt="other company img" />
-          </section>
-          <h4>Abercrombie & Fitch</h4>
-        </section>
-        <section className="otherCompanies-company">
-          <section className="topCompany-container-company-img_container">
-            <img src={Company3} alt="other company img" />
-          </section>
-          <h4>H&M</h4>
-        </section>
-        <section className="otherCompanies-company">
-          <section className="topCompany-container-company-img_container">
-            <img src={Company4} alt="other company img" />
-          </section>
-          <h4>Timberland</h4>
-        </section>
-        <section className="otherCompanies-company">
-          <section className="topCompany-container-company-img_container">
-            <img src={Company5} alt="other company img" />
-          </section>
-          <h4>ZARA</h4>
-        </section>
-        <section className="otherCompanies-company">
-          <section className="topCompany-container-company-img_container">
-            <img src={Company6} alt="other company img" />
-          </section>
-          <h4>GAP</h4>
-        </section>
-        <section className="otherCompanies-company">
-          <section className="topCompany-container-company-img_container">
-            <img src={Company7} alt="other company img" />
-          </section>
-          <h4>Gibson</h4>
-        </section>
-        <section className="otherCompanies-company">
-          <section className="topCompany-container-company-img_container">
-            <img src={Company8} alt="other company img" />
-          </section>
-          <h4>Christian Dior</h4>
-        </section>
+        {data.map((e, i) => {
+          return <Companies img={e.img} title={e.title} key={i} />;
+        })}
       </section>
     </div>
   );
 }
-
+const Companies = ({ img, title }) => {
+  return (
+    <section className="otherCompanies-company">
+      <section className="topCompany-container-company-img_container">
+        <img src={img} alt="other company img" />
+      </section>
+      <h4>{title}</h4>
+    </section>
+  );
+};
 export default otherCompanies;

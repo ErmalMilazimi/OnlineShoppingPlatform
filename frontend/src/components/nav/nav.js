@@ -36,9 +36,9 @@ function Nav() {
     >
       <LogReg />
       <div className="container">
-        <a href="#" className="navbar-brand">
+        <Link className="nav-link" to="/">
           <img src={Logo} alt="" className="nav-logo" />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -50,9 +50,9 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navmenu">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item mx-1">
-              <a href="#" className="nav-link">
+              <Link className="nav-link" to="/">
                 HOME
-              </a>
+              </Link>
             </li>
             <li className="nav-item mx-1">
               <Link className="nav-link" to="/Items">
