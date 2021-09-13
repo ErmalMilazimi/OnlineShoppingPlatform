@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./ProductList.scss";
 import Header from "../header/header";
 // import SecondHeader from "../../assets/img/second-header.jpg";
-import Nike from "../../assets/img/nike_logo.webp";
 import Prd1 from "../../assets/img/ProductList/nike1.webp";
 import Prd2 from "../../assets/img/ProductList/nike2.webp";
 import Prd3 from "../../assets/img/ProductList/nike3.webp";
@@ -101,18 +101,20 @@ const ProductList = () => {
 
   return (
     <div className="productList">
-      <Header headerClassList={true} />
+      <Header headerClassList={"productlist"} />
       <div className="container">
         <section className="productList-container">
           {data.map((e, i) => {
             return (
-              <ProductItem
-                img={e.img}
-                title={e.title}
-                desc={e.desc}
-                price={e.price}
-                key={i}
-              />
+              <Link to="/productItem">
+                <ProductItem
+                  img={e.img}
+                  title={e.title}
+                  desc={e.desc}
+                  price={e.price}
+                  key={i}
+                />
+              </Link>
             );
           })}
         </section>

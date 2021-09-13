@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./homeProduct.scss";
 import Product1 from "../../assets/img/product1.webp";
 import Product2 from "../../assets/img/product2.webp";
@@ -16,11 +17,11 @@ const HomeProduct = () => {
   return (
     <div className="homeProduct">
       <h3>Disa nga produktet</h3>
-      <a
-        href="#"
+      <Link
+        to="/"
         className="homeProduct-banner"
         style={{ backgroundImage: `url(${bannerBg})` }}
-      ></a>
+      ></Link>
       <div className="homeProduct-products">
         <div
           className="homeProduct-products-img"

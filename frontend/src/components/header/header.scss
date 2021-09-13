@@ -7,8 +7,13 @@
   background-repeat: no-repeat;
   position: relative;
 }
-.second-header {
+.productlist-header {
   height: 60vh;
   background-image: url("../../assets/img/second-header.jpg");
+  background-position: left;
+}
+.productpage-header {
+  height: 60vh;
+  background-image: url("../../assets/img/productPage-banner.png");
   background-position: left;
 }

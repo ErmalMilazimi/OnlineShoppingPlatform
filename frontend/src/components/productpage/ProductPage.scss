@@ -1,0 +1,122 @@
+.product-page {
+  margin: 50px 0;
+  display: flex;
+  // justify-content: space-between;
+  align-items: flex-start;
+  &-slider {
+    display: flex;
+    flex-direction: row-reverse;
+    &-banner {
+      color: #fff;
+      position: relative;
+      width: 500px;
+      height: 500px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      // border: 1px solid black;
+      margin-left: 20px;
+    }
+    &-imgs {
+      // border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 500px;
+      &-img {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 5px 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+    }
+  }
+  &-details {
+    margin-left: 20px;
+    padding: 30px 0;
+    // border: 1px solid black;
+    &-title {
+      font-size: 30px;
+    }
+    &-desc {
+      font-size: 20px;
+      margin: 30px 0;
+    }
+    &-price {
+      font-size: 26px;
+    }
+  }
+}
+@media only screen and(max-width:992px) {
+  .product-page {
+    &-slider {
+      flex-direction: column;
+      &-banner {
+        width: 300px;
+        height: 300px;
+      }
+      &-imgs {
+        flex-direction: row;
+        height: auto;
+        &-img {
+          width: 70px;
+          height: 70px;
+          margin: 5px;
+        }
+      }
+    }
+    &-details {
+      &-title {
+        font-size: 28px;
+      }
+      &-desc {
+        font-size: 18px;
+      }
+      &-price {
+        font-size: 24px;
+      }
+    }
+  }
+}
+@media only screen and(max-width:768px) {
+  .product-page {
+    flex-direction: column;
+    align-items: center;
+    &-slider {
+      flex-direction: column;
+      &-banner {
+        margin: 0;
+        width: 100%;
+        height: 300px;
+      }
+      &-imgs {
+        flex-direction: row;
+        height: auto;
+        &-img {
+          width: 70px;
+          height: 70px;
+          margin: 5px;
+        }
+      }
+    }
+    &-details {
+      margin: 0;
+      &-title {
+        font-size: 28px;
+      }
+      &-desc {
+        font-size: 18px;
+      }
+      &-price {
+        font-size: 24px;
+      }
+    }
+  }
+}

@@ -3,7 +3,16 @@ import Nav from "../nav/nav";
 import "./header.scss";
 
 function header(props) {
-  const classList = props.headerClassList ? "second-header" : "";
+  let classList = "";
+  switch (props.headerClassList) {
+    case "productlist":
+      classList = "productlist-header";
+      break;
+    case "productpage":
+      classList = "productpage-header";
+      break;
+    default:
+  }
 
   return (
     <div className={`${classList} header`}>

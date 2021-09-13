@@ -5,6 +5,7 @@ import "./main.scss";
 import Footer from "./components/footer/footer";
 import Loader from "./components/loader/loader";
 import Items from "./Pages/ItemsPage";
+import ProductPage from "./Pages/ProductDetails";
 
 const Default = lazy(() => import("./Pages/Home"));
 
@@ -17,6 +18,7 @@ function App() {
             <Route exact path="/" component={Default} />
             <Route exact path="/Items" component={Items} />
             <Route exact path="/product" component={Product} />
+            <Route exact path="/productItem" component={ProductPage} />
           </Switch>
           <Footer />
         </div>
