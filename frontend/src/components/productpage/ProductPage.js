@@ -1,31 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ProductPage.scss";
 import Product1 from "../../assets/img/product1.webp";
 import Product2 from "../../assets/img/product2.webp";
 import Product3 from "../../assets/img/product3.webp";
 import Product4 from "../../assets/img/product4.webp";
 import Product5 from "../../assets/img/product5.webp";
+import axios from "axios";
+import { useParams } from "react-router";
 const ProductPage = (props) => {
   const [bannerBg, setBannerBg] = useState(Product1);
-  // const item = {
-  //   title: props.title,
-  //   desc: props.desc,
-  //   price: props.price,
-  // };
-  const item = {
-    // img: ["../../assets/img/product1.webp", "../../assets/img/product2.webp"],
-    title: "Nike Prod",
-    desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis tempora quidem, facilis perferendis totam alias, optio non corrupti aliquid natus culpa consectetur amet deleniti fuga.",
-    price: "149.99",
-  };
+  const [product, setProduct] = useState({});
+  const { id } = useParams();
+
+  useEffect(async () => {
+    const res = await axios.get(`/products/${id}`);
+    setProduct(res.data);
+  }, [])
   return (
     <div className="container">
       <div className="product-page">
         <div className="product-page-slider">
-          <div
-            className="product-page-slider-banner"
-            style={{ backgroundImage: `url(${bannerBg})` }}
-          ></div>
+          <div className="product-page-slider-banner">
+            <img height="500px" src={`/Images/${product.imagePath}`}></img>
+          </div>
           <div className="product-page-slider-imgs">
             <div
               className="product-page-slider-imgs-img"
@@ -55,9 +52,12 @@ const ProductPage = (props) => {
           </div>
         </div>
         <div className="product-page-details">
-          <h3 className="product-page-details-title">{item.title}</h3>
-          <p className="product-page-details-desc">{item.desc}</p>
-          <p className="product-page-details-price">Qmimi: {item.price}€</p>
+          <h3 className="product-page-details-title">{product.name}</h3>
+          <p className="product-page-details-desc">{product.description}</p>
+          <p className="product-page-details-price">Qmimi: {product.price}€</p>
+          <div class="star">
+            {Array(product.rating).fill(<i class="fas fa-star"></i>)}
+          </div>
         </div>
       </div>
     </div>
