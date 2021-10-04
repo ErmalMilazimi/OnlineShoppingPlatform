@@ -59,9 +59,12 @@ namespace backend.Controllers
 
             var jwt = _jwtService.Generate(user.Id);
 
-            Response.Headers.Append("jwt", jwt);
+            Response.Cookies.Append("jwt", jwt, new CookieOptions
+            {
+                HttpOnly = true
+            }); ;
 
-            return Ok(new { jwt });
+            return Ok(user);
         }
 
         [HttpGet(template:"user")]
@@ -69,7 +72,7 @@ namespace backend.Controllers
         {
             try
             {
-                var jwt = Request.Headers["jwt"];
+                var jwt = Request.Cookies["jwt"];
                 var token = _jwtService.Verify(jwt);
 
                 int userId = int.Parse(token.Issuer);

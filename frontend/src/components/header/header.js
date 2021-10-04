@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "../nav/nav";
 import "./header.scss";
 
-function header(props) {
+const Header = (props) => {
   let classList = "";
   switch (props.headerClassList) {
     case "productlist":
@@ -21,4 +21,4 @@ function header(props) {
   );
 }
 
-export default header;
+export default Header;

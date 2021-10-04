@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import "./nav.scss";
 import Logo from "../../assets/img/logoTxt.png";
 import LogReg from "../login/logReg";
+import { useSelector } from "react-redux";
 
 function Nav() {
+  const user = useSelector((state) => state.auth?.user)
   const [navBar, setNavBar] = useState(false);
   const changeBackground = () => {
     if (window.scrollY >= 100) {
@@ -14,7 +16,7 @@ function Nav() {
     }
   };
   window.addEventListener("scroll", changeBackground);
-
+  console.log('user', user)
   // const [logReg, setLogReg] = useState(false);
   // const logregClicked = () => {
   //   console.log("object");
@@ -76,7 +78,7 @@ function Nav() {
             </li>
             <li className="nav-item mx-1">
               <Link className="nav-link" to="/ ">
-                CART
+                {user ? `Hi ${user.name}` : "CART"}
               </Link>
             </li>
           </ul>

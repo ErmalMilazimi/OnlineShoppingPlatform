@@ -4,9 +4,13 @@ import "./login.scss";
 import Logo from "../../assets/img/logoTxt.svg";
 import CloseLogo from "../../assets/img/close.svg";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { signIn, signUp } from "../../actions/auth";
 
 const LogReg = (props) => {
   let history = useHistory();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
   const [value, setValues] = useState({
     name: "",
     email: "",
@@ -31,27 +35,38 @@ const LogReg = (props) => {
         password,
       };
 
-      try {
-        const res = await axios.post("api/user", newUser);
-        console.log("success", res.data);
-        return;
-      } catch (error) {
-        console.log(error);
-      }
+      dispatch(signUp(newUser));
+      console.log('register success');
+
+      // try {
+      //   const res = await axios.post("api/user", newUser);
+      //   console.log("success", res.data);
+      //   return;
+      // } catch (error) {
+      //   console.log(error);
+      // }
     }
 
     const loginUser = {
       email,
       password,
     };
-    try {
-      const res = await axios.post('api/user/login', loginUser)
-      console.log('login success', res.data);
-      history.push("/productItem/1007")
-    } catch (error) {
-      console.log(error);
-    }
+    dispatch(signIn(loginUser));
+    console.log('login success');
+    // try {
+    //   const res = await axios.post('api/user/login', loginUser)
+    //   dispatch(login(res.data))
+    //   console.log('login success', res.data);
+    //   localStorage.setItem("jwt", res.data.jwt)
+
+    //   history.push("/productItem/1007")
+    // } catch (error) {
+    //   console.log(error);
+    // }
   };
+
+  console.log(user, 'useAtyh')
+
   const CloseLogReg = () => {
     document.querySelector(".logReg").style.display = "none";
     document.querySelector("body").style.overflow = "auto";
