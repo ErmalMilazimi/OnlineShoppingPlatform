@@ -86,5 +86,12 @@ namespace backend.Controllers
             }
             
         }
+
+        [HttpPost(template: "logout")]
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("jwt");
+            return Ok("success");
+        }
     }
 }

@@ -6,10 +6,10 @@ import Footer from "./components/footer/footer";
 import Loader from "./components/loader/loader";
 import Items from "./Pages/ItemsPage";
 import ProductPage from "./Pages/ProductDetails";
+import Home from './Pages/Home';
 
 import { useDispatch } from "react-redux";
 import { loadUser } from "./actions/auth";
-import axios from "axios";
 
 const Default = lazy(() => import("./Pages/Home"));
 
@@ -17,9 +17,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(async() => {
-    // console.log('rprod') 
-    // const res = await axios.get('/api/user/user');
-    // console.log(res.data, 'rpro232d') 
     dispatch(loadUser());
   }, []);
 
@@ -28,7 +25,7 @@ const App = () => {
       <Router>
         <div className="App">
           <Switch>
-            <Route exact path="/" component={Default} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/Items" component={Items} />
             <Route exact path="/product" component={Product} />
             <Route exact path="/productItem/:id" component={ProductPage} />

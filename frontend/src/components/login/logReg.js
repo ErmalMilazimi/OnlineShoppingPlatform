@@ -37,40 +37,24 @@ const LogReg = (props) => {
 
       dispatch(signUp(newUser));
       console.log('register success');
-
-      // try {
-      //   const res = await axios.post("api/user", newUser);
-      //   console.log("success", res.data);
-      //   return;
-      // } catch (error) {
-      //   console.log(error);
-      // }
+      showForm('login')
+    } else {
+      const loginUser = {
+        email,
+        password,
+      };
+      dispatch(signIn(loginUser));
+      console.log('login success');
+      CloseLogReg();
+      history.push("/productItem/1007")
     }
-
-    const loginUser = {
-      email,
-      password,
-    };
-    dispatch(signIn(loginUser));
-    console.log('login success');
-    // try {
-    //   const res = await axios.post('api/user/login', loginUser)
-    //   dispatch(login(res.data))
-    //   console.log('login success', res.data);
-    //   localStorage.setItem("jwt", res.data.jwt)
-
-    //   history.push("/productItem/1007")
-    // } catch (error) {
-    //   console.log(error);
-    // }
   };
-
-  console.log(user, 'useAtyh')
 
   const CloseLogReg = () => {
     document.querySelector(".logReg").style.display = "none";
     document.querySelector("body").style.overflow = "auto";
   };
+
   const showForm = (el) => {
     if (el === "login") {
       document.querySelector(".regBtn").classList.remove("active");

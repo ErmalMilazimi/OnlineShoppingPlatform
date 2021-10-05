@@ -5,7 +5,6 @@ import ProductPage from "../components/productpage/ProductPage";
 const ProductDetails = () => {
   return (
     <div>
-      <Header headerClassList={"productpage"} />
       <ProductPage />
     </div>
   );

@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import "./nav.scss";
 import Logo from "../../assets/img/logoTxt.png";
 import LogReg from "../login/logReg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from '../../actions/auth'
 
-function Nav() {
+const Nav = () => {
+  const dispatch = useDispatch();
+  let history = useHistory();
   const user = useSelector((state) => state.auth?.user)
   const [navBar, setNavBar] = useState(false);
   const changeBackground = () => {
@@ -16,12 +20,16 @@ function Nav() {
     }
   };
   window.addEventListener("scroll", changeBackground);
-  console.log('user', user)
   // const [logReg, setLogReg] = useState(false);
   // const logregClicked = () => {
   //   console.log("object");
   //   setLogReg(true);
   // };
+
+  const log_out = () => {
+    dispatch(logout())
+    history.push("/")
+  }
 
   const showLogReg = () => {
     document.querySelector(".logReg").style.display = "flex";
@@ -71,16 +79,21 @@ function Nav() {
                 CONTACT US
               </Link>
             </li>
-            <li className="nav-item mx-1">
+            {!user && <li className="nav-item mx-1">
               <div className="nav-link" id="signlog" onClick={showLogReg}>
                 LOG IN
               </div>
-            </li>
+            </li>}
             <li className="nav-item mx-1">
               <Link className="nav-link" to="/ ">
                 {user ? `Hi ${user.name}` : "CART"}
               </Link>
             </li>
+            {user && <li className="nav-item mx-1">
+              <div className="nav-link" id="signlog" onClick={log_out}>
+                LOGOUT
+              </div>
+            </li>}
           </ul>
         </div>
       </div>
