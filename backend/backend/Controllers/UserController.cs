@@ -62,7 +62,7 @@ namespace backend.Controllers
             Response.Cookies.Append("jwt", jwt, new CookieOptions
             {
                 HttpOnly = true
-            }); ;
+            });
 
             return Ok(user);
         }

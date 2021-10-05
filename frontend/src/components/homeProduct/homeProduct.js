@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./homeProduct.scss";
-import Product1 from "../../assets/img/product1.webp";
-import Product2 from "../../assets/img/product2.webp";
-import Product3 from "../../assets/img/product3.webp";
-import Product4 from "../../assets/img/product4.webp";
-import Product5 from "../../assets/img/product5.webp";
+import axios from "axios";
+
 const HomeProduct = () => {
-  const [bannerBg, setBannerBg] = useState(Product1);
+  const [bannerBg, setBannerBg] = useState({});
+  const [products, setProducts] = useState([]);
+
+  useEffect(async () => {
+    const res = await axios.get('/products');
+    setProducts(res.data.splice(0, 5));
+    setBannerBg(res.data[0]);
+  }, [])
 
   //   const changeBanner = (img) => {
   //     console.log("asdasd");
@@ -18,17 +22,24 @@ const HomeProduct = () => {
     <div className="homeProduct">
       <h3>Disa nga produktet</h3>
       <Link
-        to="/"
+        to={`/productItem/${bannerBg.id}`}
         className="homeProduct-banner"
-        style={{ backgroundImage: `url(${bannerBg})` }}
-      ></Link>
+        style={{ backgroundImage: `url(/Images/${bannerBg.imagePath})` }}
+      >
+      </Link>
       <div className="homeProduct-products">
-        <div
-          className="homeProduct-products-img"
-          style={{ backgroundImage: `url(${Product1})` }}
-          onClick={() => setBannerBg(Product1)}
-        ></div>
-        <div
+        {products.map((prod) => {
+          return (
+            <div
+              className="homeProduct-products-img"
+              onClick={() => setBannerBg(prod)}
+              style={{ backgroundImage: `url(/Images/${prod.imagePath})` }}
+            >
+            </div>
+          );
+        })}
+
+        {/* <div
           className="homeProduct-products-img"
           style={{ backgroundImage: `url(${Product2})` }}
           onClick={() => setBannerBg(Product2)}
@@ -47,7 +58,7 @@ const HomeProduct = () => {
           class="homeProduct-products-img"
           style={{ backgroundImage: `url(${Product5})` }}
           onClick={() => setBannerBg(Product5)}
-        ></div>
+        ></div> */}
       </div>
     </div>
   );
