@@ -35,7 +35,13 @@ namespace backend.Controllers
             return Ok(_productsServices.GetProducts());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{search}")]
+        public IActionResult SearchProducts(string search)
+        {
+            return Ok(_productsServices.SearchProducts(search));
+        }
+
+        [HttpGet("{id:int}")]
         public IActionResult GetProduct(int id)
         {
             return Ok(_productsServices.GetProduct(id));

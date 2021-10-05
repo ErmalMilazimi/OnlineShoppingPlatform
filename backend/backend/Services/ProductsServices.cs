@@ -47,6 +47,16 @@ namespace backend.Services
             return _context.Products.ToList();
         }
 
+        public List<Product> SearchProducts(string search)
+        {
+            if (string.IsNullOrEmpty(search)){
+                return _context.Products.ToList();
+            }
+
+            return _context.Products.Where(p => p.Name.Contains(search) || p.Category.Contains(search)).ToList();
+
+        }
+
         public void EditProduct(int id, Product product)
         {
             var editProduct = _context.Products.First(p => p.Id == id);

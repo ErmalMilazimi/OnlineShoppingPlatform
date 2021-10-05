@@ -60,8 +60,8 @@ const ProductPage = () => {
           <h3 className="product-page-details-title">{product.name}</h3>
           <p className="product-page-details-desc">{product.description}</p>
           <p className="product-page-details-price">Qmimi: {product.price}€</p>
-          <div class="star">
-            {Array(product.rating).fill(<i class="fas fa-star"></i>)}
+          <div className="star">
+            {Array(product.rating).fill(<i className="fas fa-star"></i>)}
           </div>
         </div>
       </div>

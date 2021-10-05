@@ -16,7 +16,7 @@ const Default = lazy(() => import("./Pages/Home"));
 const App = () => {
   const dispatch = useDispatch();
 
-  useEffect(async() => {
+  useEffect(() => {
     dispatch(loadUser());
   }, []);
 

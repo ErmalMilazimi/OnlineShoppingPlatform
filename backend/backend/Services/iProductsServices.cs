@@ -12,6 +12,8 @@ namespace backend.Services
         Product CreateProduct(Product product);
         Product GetProduct(int id);
         List<Product> GetProducts();
+
+        List<Product> SearchProducts(string search);
         void DeleteProduct(int id);
         void EditProduct(int id, Product product);
     }
