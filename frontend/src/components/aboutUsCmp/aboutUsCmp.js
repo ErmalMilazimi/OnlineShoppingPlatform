@@ -1,9 +1,12 @@
 import React from "react";
 import "./aboutUsCmp.scss";
+import Header from "../header/header";
 import OnlineShopping from "../../assets/img/online-shopping.webp";
 
 function aboutUsCmp() {
   return (
+    <div>
+    <Header headerClassList={"productpage"} />
     <div className="container">
       <section className="aboutUsCmp">
         <h3>Kush jemi ne dhe qfare ofrojme ?</h3>
@@ -18,6 +21,7 @@ function aboutUsCmp() {
           <img src={OnlineShopping} alt="online shopping" />
         </section>
       </section>
+    </div>
     </div>
   );
 }

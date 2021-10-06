@@ -10,6 +10,7 @@ import Home from './Pages/Home';
 
 import { useDispatch } from "react-redux";
 import { loadUser } from "./actions/auth";
+import aboutUsCmp from "./components/aboutUsCmp/aboutUsCmp";
 
 const Default = lazy(() => import("./Pages/Home"));
 
@@ -29,6 +30,7 @@ const App = () => {
             <Route exact path="/Items" component={Items} />
             <Route exact path="/product" component={Product} />
             <Route exact path="/productItem/:id" component={ProductPage} />
+            <Route exact path="/about" component={aboutUsCmp} />
           </Switch>
           <Footer />
         </div>

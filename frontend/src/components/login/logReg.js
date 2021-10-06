@@ -11,6 +11,7 @@ const LogReg = (props) => {
   let history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.auth.user);
+  const [errors, setErrors] = useState({});
   const [value, setValues] = useState({
     name: "",
     email: "",
@@ -19,34 +20,76 @@ const LogReg = (props) => {
 
   const { name, email, password } = value;
 
-  const onChange = (e) =>
+  const setErrorMsg = (key, message) => {
+    setErrors((oldErrors) => {
+      return {
+        ...oldErrors,
+        [key]: message,
+      };
+    });
+  };
+
+  const onChange = (e) => {
+    setErrorMsg(e.target.name, null);
+
     setValues({
       ...value,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const validateEmail = (email) => {
+    var re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  };
 
   const handleLoginSubmit = async (e, type) => {
     e.preventDefault();
+    let isValid = true;
 
-    if (type == "register") {
-      const newUser = {
-        name,
-        email,
-        password,
-      };
-
-      dispatch(signUp(newUser));
-      console.log('register success');
-      showForm('login')
+    if (!name.length) {
+      setErrorMsg("name", "name is required!");
+      isValid = false;
     } else {
-      const loginUser = {
-        email,
-        password,
-      };
-      dispatch(signIn(loginUser));
-      console.log('login success');
-      CloseLogReg();
-      history.push("/productItem/1007")
+      setErrorMsg("name", null);
+    }
+
+    if (!validateEmail(email)) {
+      setErrorMsg("email", "email is required!");
+      isValid = false;
+    } else {
+      setErrorMsg("email", null);
+    }
+
+    if (!password.length) {
+      setErrorMsg("password", "password is required!");
+      isValid = false;
+    } else {
+      setErrorMsg("password", null);
+    }
+
+    if (isValid) {
+      if (type == "register") {
+        const newUser = {
+          name,
+          email,
+          password,
+        };
+
+        dispatch(signUp(newUser));
+        console.log("register success");
+        showForm("login");
+      } else {
+        const loginUser = {
+          email,
+          password,
+        };
+
+        dispatch(signIn(loginUser));
+        console.log("login success");
+        CloseLogReg();
+        history.push("/productItem/1007");
+      }
     }
   };
 
@@ -110,6 +153,7 @@ const LogReg = (props) => {
             type="text"
             id="logEmail"
           />
+          {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
           <label htmlFor="LogPassword">Password:</label>
           <input
             type="password"
@@ -118,6 +162,9 @@ const LogReg = (props) => {
             onChange={(e) => onChange(e)}
             value={password}
           />
+          {errors.password && (
+            <div style={{ color: "red" }}>{errors.password}</div>
+          )}
           <button type="submit">Log In</button>
         </form>
         <form
@@ -140,6 +187,7 @@ const LogReg = (props) => {
             onChange={(e) => onChange(e)}
             value={email}
           />
+          {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
           <label htmlFor="regPassword">Password:</label>
           <input
             type="password"
@@ -153,6 +201,6 @@ const LogReg = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default LogReg;
