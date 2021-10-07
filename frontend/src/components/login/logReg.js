@@ -88,7 +88,7 @@ const LogReg = (props) => {
         dispatch(signIn(loginUser));
         console.log("login success");
         CloseLogReg();
-        history.push("/productItem/1007");
+        history.push("/Items");
       }
     }
   };
@@ -113,15 +113,15 @@ const LogReg = (props) => {
       document.querySelector(".register").classList.add("active");
     }
   };
-
+  document.addEventListener("click", (event) => {
+    if (event.target.className === "logReg") {
+      CloseLogReg();
+    }
+  });
   return (
     <div className="logReg" style={props.style}>
       <div className="form-group">
-        <div
-          className="closeForm"
-          style={{ backgroundImage: "url(" + CloseLogo + ")" }}
-          onClick={CloseLogReg}
-        ></div>
+        <div className="closeForm" style={{ backgroundImage: "url(" + CloseLogo + ")" }} onClick={CloseLogReg}></div>
         <img src={Logo} alt="logo" className="logo" />
         <div className="buttons">
           <button
@@ -141,61 +141,23 @@ const LogReg = (props) => {
             Register
           </button>
         </div>
-        <form
-          onSubmit={(e) => handleLoginSubmit(e, "login")}
-          className="login active"
-        >
+        <form onSubmit={(e) => handleLoginSubmit(e, "login")} className="login active">
           <label htmlFor="logEmail">Email:</label>
-          <input
-            name="email"
-            onChange={(e) => onChange(e)}
-            value={email}
-            type="text"
-            id="logEmail"
-          />
+          <input name="email" onChange={(e) => onChange(e)} value={email} type="text" id="logEmail" />
           {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
           <label htmlFor="LogPassword">Password:</label>
-          <input
-            type="password"
-            id="LogPassword"
-            name="password"
-            onChange={(e) => onChange(e)}
-            value={password}
-          />
-          {errors.password && (
-            <div style={{ color: "red" }}>{errors.password}</div>
-          )}
+          <input type="password" id="LogPassword" name="password" onChange={(e) => onChange(e)} value={password} />
+          {errors.password && <div style={{ color: "red" }}>{errors.password}</div>}
           <button type="submit">Log In</button>
         </form>
-        <form
-          onSubmit={(e) => handleLoginSubmit(e, "register")}
-          className="register"
-        >
+        <form onSubmit={(e) => handleLoginSubmit(e, "register")} className="register">
           <label htmlFor="regUsername">Name:</label>
-          <input
-            type="text"
-            id="regUsername"
-            name="name"
-            onChange={(e) => onChange(e)}
-            value={name}
-          />
+          <input type="text" id="regUsername" name="name" onChange={(e) => onChange(e)} value={name} />
           <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            onChange={(e) => onChange(e)}
-            value={email}
-          />
+          <input type="email" id="email" name="email" onChange={(e) => onChange(e)} value={email} />
           {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
           <label htmlFor="regPassword">Password:</label>
-          <input
-            type="password"
-            id="regPassword"
-            name="password"
-            onChange={(e) => onChange(e)}
-            value={password}
-          />
+          <input type="password" id="regPassword" name="password" onChange={(e) => onChange(e)} value={password} />
           <button type="submit">Register</button>
         </form>
       </div>

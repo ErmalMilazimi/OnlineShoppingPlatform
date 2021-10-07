@@ -8,10 +8,10 @@ const HomeProduct = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(async () => {
-    const res = await axios.get('/products');
-    setProducts(res.data.splice(0, 5));
+    const res = await axios.get("/products");
+    setProducts(res.data);
     setBannerBg(res.data[0]);
-  }, [])
+  }, []);
 
   //   const changeBanner = (img) => {
   //     console.log("asdasd");
@@ -21,22 +21,10 @@ const HomeProduct = () => {
   return (
     <div className="homeProduct">
       <h3>Disa nga produktet</h3>
-      <Link
-        to={`/productItem/${bannerBg.id}`}
-        className="homeProduct-banner"
-        style={{ backgroundImage: `url(/Images/${bannerBg.imagePath})` }}
-      >
-      </Link>
+      <Link to={`/productItem/${bannerBg.id}`} className="homeProduct-banner" style={{ backgroundImage: `url(/Images/${bannerBg.imagePath})` }}></Link>
       <div className="homeProduct-products">
         {products.map((prod) => {
-          return (
-            <div
-              className="homeProduct-products-img"
-              onClick={() => setBannerBg(prod)}
-              style={{ backgroundImage: `url(/Images/${prod.imagePath})` }}
-            >
-            </div>
-          );
+          return <div className="homeProduct-products-img" onClick={() => setBannerBg(prod)} style={{ backgroundImage: `url(/Images/${prod.imagePath})` }}></div>;
         })}
 
         {/* <div

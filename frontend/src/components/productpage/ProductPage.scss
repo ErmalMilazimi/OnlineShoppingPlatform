@@ -7,6 +7,9 @@
     display: flex;
     flex-direction: row-reverse;
     &-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: #fff;
       position: relative;
       width: 500px;
@@ -14,11 +17,12 @@
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
-      // border: 1px solid black;
       margin-left: 20px;
+      img {
+        width: 100%;
+      }
     }
     &-imgs {
-      // border: 1px solid black;
       display: flex;
       align-items: center;
       justify-content: center;

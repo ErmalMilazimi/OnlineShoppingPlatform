@@ -8,26 +8,24 @@ const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(async () => {
-    const res = await axios.get('/products');
-    console.log('res', res.data);
+    const res = await axios.get("/products");
+    console.log("res", res.data);
     setProducts(res.data);
-  }, [])
+  }, []);
 
   return (
     <div className="productList">
       <Header headerClassList={"productlist"} />
       <div className="container">
+        <div className="productList-container-searchBar">
+          <input className="productList-container-searchBar-inputTxt" type="text" id="search" name="search" placeholder="Search products.." />
+          <button className="productList-container-searchBar-btn">Search</button>
+        </div>
         <section className="productList-container">
           {products.map((product, i) => {
             return (
               <Link to={`/productItem/${product.id}`}>
-                <ProductItem
-                  img={product.imagePath}
-                  title={product.name}
-                  desc={product.description}
-                  price={product.price}
-                  key={i}
-                />
+                <ProductItem img={product.imagePath} title={product.name} desc={product.description} price={product.price} key={i} />
               </Link>
             );
           })}
