@@ -69,11 +69,15 @@ const Nav = () => {
                 </div>
               </li>
             )}
-            <li className="nav-item mx-1">
-              <Link className="nav-link" to="/ ">
-                {user ? `Hi ${user.name}` : "CART"}
-              </Link>
-            </li>
+            {user ? (
+              <li className="nav-item mx-1">
+                <Link className="nav-link" to="/Items">
+                  {`Hi ${user.name}`}
+                </Link>
+              </li>
+            ) : (
+              ""
+            )}
             {user && (
               <li className="nav-item mx-1">
                 <div className="nav-link" id="signlog" onClick={log_out}>

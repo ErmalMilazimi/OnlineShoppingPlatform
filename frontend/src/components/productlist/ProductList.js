@@ -39,11 +39,10 @@ const ProductItem = ({ img, title, desc, price }) => {
   return (
     <div className="productList-container-item">
       <div class="productList-container-item-top">
-        <img width="300px" src={`/Images/${img}`}></img>
+        <img src={`/Images/${img}`}></img>
       </div>
       <div class="productList-container-item-bottom">
         <h3>{title}</h3>
-        <p>{desc}</p>
         <span>{price} €</span>
       </div>
     </div>
