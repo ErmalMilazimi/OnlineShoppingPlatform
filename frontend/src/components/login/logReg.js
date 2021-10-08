@@ -69,7 +69,7 @@ const LogReg = (props) => {
     }
 
     if (isValid) {
-      if (type == "register") {
+      if (type === "register") {
         const newUser = {
           name,
           email,

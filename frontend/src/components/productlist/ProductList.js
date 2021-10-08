@@ -25,7 +25,7 @@ const ProductList = () => {
           {products.map((product, i) => {
             return (
               <Link to={`/productItem/${product.id}`}>
-                <ProductItem img={product.imagePath} title={product.name} desc={product.description} price={product.price} key={i} />
+                <ProductItem img={product.imagePath} title={product.name} price={product.price} key={i} />
               </Link>
             );
           })}

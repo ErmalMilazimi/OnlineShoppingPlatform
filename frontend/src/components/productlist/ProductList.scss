@@ -18,6 +18,7 @@
         border-radius: 30px;
         &:focus {
           outline: 2px solid #32cd32;
+          border: 1px solid rgba(#32cd32, 0.5);
         }
       }
       &-btn {
