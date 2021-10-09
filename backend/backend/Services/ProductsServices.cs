@@ -1,7 +1,6 @@
 ﻿using backend.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,10 +29,22 @@ namespace backend.Services
             return product;
         }
 
+        public async Task deleteImages(string image)
+        {
+            var imageDelete = Path.Combine(_webHostEnvironment.ContentRootPath, "Images", image);
+            FileInfo fi = new FileInfo(imageDelete);
+            if (fi != null)
+            {
+                System.IO.File.Delete(imageDelete);
+                fi.Delete();
+            }
+        }
+
         public void DeleteProduct(int id)
         {
             var product = _context.Products.First(p => p.Id == id);
             _context.Products.Remove(product);
+            deleteImages(product.ImagePath);
             _context.SaveChanges();
         }
 
