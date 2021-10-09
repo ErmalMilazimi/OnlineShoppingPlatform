@@ -6,6 +6,7 @@ import axios from "axios";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
+  const [search, setSearch] = useState('');
 
   useEffect(async () => {
     const res = await axios.get("/products");
@@ -13,22 +14,31 @@ const ProductList = () => {
     setProducts(res.data);
   }, []);
 
+  const onSearch = (e) => {
+    setSearch(e.target.value);
+  }
+
+  const filteredProducts = async () => {
+    const { data } = await axios.get(`/products/${search}`);
+    setProducts(data)
+  }
+
   return (
     <div className="productList">
       <Header headerClassList={"productlist"} />
       <div className="container">
         <div className="productList-container-searchBar">
-          <input className="productList-container-searchBar-inputTxt" type="text" id="search" name="search" placeholder="Search products.." />
-          <button className="productList-container-searchBar-btn">Search</button>
+          <input className="productList-container-searchBar-inputTxt" type="text" id="search" name="search" onChange={(e) => onSearch(e)} placeholder="Search products.." />
+          <button className="productList-container-searchBar-btn" onClick={() => filteredProducts()}>Search</button>
         </div>
         <section className="productList-container">
-          {products.map((product, i) => {
+          {products.length != 0 ? products.map((product, i) => {
             return (
               <Link to={`/productItem/${product.id}`}>
                 <ProductItem img={product.imagePath} title={product.name} price={product.price} key={i} />
               </Link>
             );
-          })}
+          }) : "No items."}
         </section>
       </div>
     </div>

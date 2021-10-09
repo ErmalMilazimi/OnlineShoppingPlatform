@@ -8,12 +8,14 @@ import Items from "./Pages/ItemsPage";
 import ProductPage from "./Pages/ProductDetails";
 import Home from "./Pages/Home";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "./actions/auth";
 import AboutUs from "./Pages/AboutUs";
+import ProtectedRoute from "./protected-route/ProtectedRoute";
 
 const App = () => {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     dispatch(loadUser());
@@ -28,7 +30,7 @@ const App = () => {
             <Route exact path="/Items" component={Items} />
             <Route exact path="/product" component={Product} />
             <Route exact path="/productItem/:id" component={ProductPage} />
-            <Route exact path="/about" component={AboutUs} />
+            <ProtectedRoute exact path="/about" component={AboutUs} user={user} />
           </Switch>
           <Footer />
         </div>

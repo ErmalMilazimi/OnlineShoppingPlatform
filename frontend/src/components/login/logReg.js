@@ -46,8 +46,8 @@ const LogReg = (props) => {
   const handleLoginSubmit = async (e, type) => {
     e.preventDefault();
     let isValid = true;
-
-    if (!name.length) {
+    
+    if (!name.length && type === "register") {
       setErrorMsg("name", "name is required!");
       isValid = false;
     } else {
@@ -153,11 +153,13 @@ const LogReg = (props) => {
         <form onSubmit={(e) => handleLoginSubmit(e, "register")} className="register">
           <label htmlFor="regUsername">Name:</label>
           <input type="text" id="regUsername" name="name" onChange={(e) => onChange(e)} value={name} />
+          {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
           <label htmlFor="email">Email:</label>
           <input type="email" id="email" name="email" onChange={(e) => onChange(e)} value={email} />
           {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
           <label htmlFor="regPassword">Password:</label>
           <input type="password" id="regPassword" name="password" onChange={(e) => onChange(e)} value={password} />
+          {errors.password && <div style={{ color: "red" }}>{errors.password}</div>}
           <button type="submit">Register</button>
         </form>
       </div>
