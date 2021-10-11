@@ -34,6 +34,7 @@ namespace backend.Controllers
             var user = new User
             {
                 Name = _user.Name,
+                Role = "Client",
                 Email = _user.Email,
                 Password = BCrypt.Net.BCrypt.HashPassword(_user.Password),
             };
