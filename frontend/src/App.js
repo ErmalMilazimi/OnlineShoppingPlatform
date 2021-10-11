@@ -7,6 +7,7 @@ import Loader from "./components/loader/loader";
 import Items from "./Pages/ItemsPage";
 import ProductPage from "./Pages/ProductDetails";
 import Home from "./Pages/Home";
+import AddProduct from "./Pages/AddProduct";
 
 import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "./actions/auth";
@@ -30,6 +31,7 @@ const App = () => {
             <Route exact path="/Items" component={Items} />
             <Route exact path="/product" component={Product} />
             <Route exact path="/productItem/:id" component={ProductPage} />
+            <Route exact path="/AddProduct" component={AddProduct} />
             <ProtectedRoute exact path="/about" component={AboutUs} user={user} />
           </Switch>
           <Footer />
