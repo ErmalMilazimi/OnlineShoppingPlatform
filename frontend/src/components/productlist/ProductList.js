@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "./ProductList.scss";
 import Header from "../header/header";
@@ -7,9 +8,10 @@ import axios from "axios";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
+  const { filter } = useParams();
 
   useEffect(async () => {
-    const res = await axios.get("/products");
+    const res = await axios.get(`/products/${filter ? filter : ''}`);
     console.log("res", res.data);
     setProducts(res.data);
   }, []);
@@ -45,7 +47,7 @@ const ProductList = () => {
   );
 };
 
-const ProductItem = ({ img, title, desc, price }) => {
+const ProductItem = ({ img, title, price }) => {
   return (
     <div className="productList-container-item">
       <div class="productList-container-item-top">

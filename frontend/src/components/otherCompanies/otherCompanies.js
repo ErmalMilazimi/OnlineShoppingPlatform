@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./otherCompanies.scss";
 import Company1 from "../../assets/img/otherC1.webp";
 import Company2 from "../../assets/img/otherC2.webp";
@@ -48,7 +49,11 @@ function otherCompanies() {
     <div className="container">
       <section className="otherCompanies">
         {data.map((e, i) => {
-          return <Companies img={e.img} title={e.title} key={i} />;
+          return (
+            <Link to={`/Items/${e.title}`}>
+              <Companies img={e.img} title={e.title} key={i} />
+            </Link>
+          );
         })}
       </section>
     </div>

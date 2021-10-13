@@ -18,6 +18,7 @@ namespace backend.Models
         public string Description { get; set; }
         [Required]
         public string Category { get; set; }
+        public string Brand { get; set; }
         [Required]
         public float Price { get; set; }
         [Required]

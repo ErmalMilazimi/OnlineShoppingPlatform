@@ -64,7 +64,7 @@ namespace backend.Services
                 return _context.Products.ToList();
             }
 
-            return _context.Products.Where(p => p.Name.Contains(search) || p.Category.Contains(search)).ToList();
+            return _context.Products.Where(p => p.Name.Contains(search) || p.Category.Contains(search) || p.Brand.Contains(search)).ToList();
 
         }
 
