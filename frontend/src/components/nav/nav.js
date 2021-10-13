@@ -6,6 +6,7 @@ import Logo from "../../assets/img/logoTxt.png";
 import LogReg from "../login/logReg";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../actions/auth";
+import { seedItems } from "../../seed/seed-Items";
 
 const Nav = () => {
   const dispatch = useDispatch();
@@ -26,18 +27,35 @@ const Nav = () => {
     history.push("/");
   };
 
+  const seed = () => {
+    seedItems();
+    history.push("/Items");
+  };
+
   const showLogReg = () => {
     document.querySelector(".logReg").style.display = "flex";
     document.querySelector("body").style.overflow = "hidden";
   };
   return (
-    <nav className={navBar ? "item-container navbar navbar-expand-lg navbar-dark active" : "item-container navbar navbar-expand-lg navbar-dark"} id="navbar-menu">
+    <nav
+      className={
+        navBar
+          ? "item-container navbar navbar-expand-lg navbar-dark active"
+          : "item-container navbar navbar-expand-lg navbar-dark"
+      }
+      id="navbar-menu"
+    >
       <LogReg />
       <div className="container">
         <Link className="nav-link" to="/">
           <img src={Logo} alt="" className="nav-logo" />
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navmenu">
@@ -52,11 +70,13 @@ const Nav = () => {
                 ITEMS
               </Link>
             </li>
-            {user?.role == 'Admin' && <li className="nav-item mx-1">
-              <Link className="nav-link" to="/about">
-                ABOUT US
-              </Link>
-            </li>}
+            {user?.role == "Admin" && (
+              <li className="nav-item mx-1">
+                <Link className="nav-link" to="/about">
+                  ABOUT US
+                </Link>
+              </li>
+            )}
             <li className="nav-item mx-1">
               <Link className="nav-link" to="/AddProduct">
                 CONTACT US
@@ -83,6 +103,13 @@ const Nav = () => {
                 <div className="nav-link" id="signlog" onClick={log_out}>
                   LOGOUT
                 </div>
+              </li>
+            )}
+            {user?.role == "Admin" && (
+              <li className="nav-item mx-1">
+                <Link className="nav-link" to="/Items" onClick={seed}>
+                  Seed Items
+                </Link>
               </li>
             )}
           </ul>
