@@ -43,6 +43,13 @@ namespace backend.Controllers
             return Ok("User added");
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUser(int id)
+        {
+            _userServices.DeleteUser(id);
+            return Ok("User has been deleted!");
+        }
+
         [HttpPost(template:"login")]
         public IActionResult Login(User _user)
         {

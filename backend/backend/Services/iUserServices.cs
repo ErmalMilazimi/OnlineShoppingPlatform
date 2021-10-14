@@ -12,5 +12,6 @@ namespace backend.Services
         List<User> getUsers();
         User getByEmail(string email);
         User getById(int id);
+        void DeleteUser(int id);
     }
 }

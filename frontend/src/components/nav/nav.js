@@ -72,11 +72,16 @@ const Nav = () => {
             </li>
             {user?.role == "Admin" && (
               <li className="nav-item mx-1">
-                <Link className="nav-link" to="/about">
-                  ABOUT US
+                <Link className="nav-link" to="/dashboard">
+                  Dashboard
                 </Link>
               </li>
             )}
+            <li className="nav-item mx-1">
+              <Link className="nav-link" to="/about">
+                ABOUT US
+              </Link>
+            </li>
             <li className="nav-item mx-1">
               <Link className="nav-link" to="/AddProduct">
                 CONTACT US

@@ -22,6 +22,13 @@ namespace backend.Services
             return user;
         }
 
+        public void DeleteUser(int id)
+        {
+            var user = _context.Users.First(u => u.Id == id);
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+        }
+
         public List<User> getUsers()
         {
             return _context.Users.ToList();
