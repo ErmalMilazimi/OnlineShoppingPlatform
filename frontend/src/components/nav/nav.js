@@ -73,7 +73,7 @@ const Nav = () => {
             {user?.role == "Admin" && (
               <li className="nav-item mx-1">
                 <Link className="nav-link" to="/dashboard">
-                  Dashboard
+                  DASHBOARD
                 </Link>
               </li>
             )}
@@ -108,13 +108,6 @@ const Nav = () => {
                 <div className="nav-link" id="signlog" onClick={log_out}>
                   LOGOUT
                 </div>
-              </li>
-            )}
-            {user?.role == "Admin" && (
-              <li className="nav-item mx-1">
-                <Link className="nav-link" to="/Items" onClick={seed}>
-                  Seed Items
-                </Link>
               </li>
             )}
           </ul>

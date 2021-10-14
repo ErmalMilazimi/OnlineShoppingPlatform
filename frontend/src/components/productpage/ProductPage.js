@@ -38,8 +38,6 @@ const ProductPage = () => {
             <h3 className="product-page-details-title">{product.name}</h3>
             <p className="product-page-details-desc">{product.description}</p>
             <p className="product-page-details-price">Qmimi: {product.price}€</p>
-            {user && <button onClick={() => deleteProduct(product.id)}>DELETE</button>}
-
             <div className="star">{Array(product.rating).fill(<i className="fas fa-star"></i>)}</div>
           </div>
         </div>
