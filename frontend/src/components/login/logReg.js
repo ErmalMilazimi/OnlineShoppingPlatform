@@ -46,7 +46,7 @@ const LogReg = (props) => {
   const handleLoginSubmit = async (e, type) => {
     e.preventDefault();
     let isValid = true;
-    
+
     if (!name.length && type === "register") {
       setErrorMsg("name", "name is required!");
       isValid = false;
@@ -85,10 +85,15 @@ const LogReg = (props) => {
           password,
         };
 
-        dispatch(signIn(loginUser));
-        console.log("login success");
-        CloseLogReg();
-        history.push("/Items");
+        const log = await dispatch(signIn(loginUser));
+
+        if (log) {
+          console.log("login success");
+          CloseLogReg();
+          history.push("/Items");
+        } else {
+          setErrorMsg("auth", "email and password do not match!");
+        }
       }
     }
   };
@@ -121,7 +126,11 @@ const LogReg = (props) => {
   return (
     <div className="logReg" style={props.style}>
       <div className="form-group">
-        <div className="closeForm" style={{ backgroundImage: "url(" + CloseLogo + ")" }} onClick={CloseLogReg}></div>
+        <div
+          className="closeForm"
+          style={{ backgroundImage: "url(" + CloseLogo + ")" }}
+          onClick={CloseLogReg}
+        ></div>
         <img src={Logo} alt="logo" className="logo" />
         <div className="buttons">
           <button
@@ -141,25 +150,68 @@ const LogReg = (props) => {
             Register
           </button>
         </div>
-        <form onSubmit={(e) => handleLoginSubmit(e, "login")} className="login active">
+        <form
+          onSubmit={(e) => handleLoginSubmit(e, "login")}
+          className="login active"
+        >
           <label htmlFor="logEmail">Email:</label>
-          <input name="email" onChange={(e) => onChange(e)} value={email} type="text" id="logEmail" />
+          <input
+            name="email"
+            onChange={(e) => onChange(e)}
+            value={email}
+            type="text"
+            id="logEmail"
+          />
           {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
           <label htmlFor="LogPassword">Password:</label>
-          <input type="password" id="LogPassword" name="password" onChange={(e) => onChange(e)} value={password} />
-          {errors.password && <div style={{ color: "red" }}>{errors.password}</div>}
+          <input
+            type="password"
+            id="LogPassword"
+            name="password"
+            onChange={(e) => onChange(e)}
+            value={password}
+          />
+          {errors.password && (
+            <div style={{ color: "red" }}>{errors.password}</div>
+          )}
           <button type="submit">Log In</button>
         </form>
-        <form onSubmit={(e) => handleLoginSubmit(e, "register")} className="register">
+        <form
+          onSubmit={(e) => handleLoginSubmit(e, "register")}
+          className="register"
+        >
           <label htmlFor="regUsername">Name:</label>
-          <input type="text" id="regUsername" name="name" onChange={(e) => onChange(e)} value={name} />
+          <input
+            type="text"
+            id="regUsername"
+            name="name"
+            onChange={(e) => onChange(e)}
+            value={name}
+          />
           {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" onChange={(e) => onChange(e)} value={email} />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            onChange={(e) => onChange(e)}
+            value={email}
+          />
           {errors.email && <div style={{ color: "red" }}>{errors.email}</div>}
           <label htmlFor="regPassword">Password:</label>
-          <input type="password" id="regPassword" name="password" onChange={(e) => onChange(e)} value={password} />
-          {errors.password && <div style={{ color: "red" }}>{errors.password}</div>}
+          <input
+            type="password"
+            id="regPassword"
+            name="password"
+            onChange={(e) => onChange(e)}
+            value={password}
+          />
+          {errors.password && (
+            <div style={{ color: "red" }}>{errors.password}</div>
+          )}
+          {errors.auth && (
+            <div style={{ color: "red" }}>{errors.auth}</div>
+          )}
           <button type="submit">Register</button>
         </form>
       </div>

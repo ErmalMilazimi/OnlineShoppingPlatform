@@ -7,6 +7,7 @@ export const signIn = (user) => async (dispatch) => {
       type: "SIGN_IN",
       user: res.data,
     });
+    return res.data;
   } catch (error) {
     console.log(error);
   }
