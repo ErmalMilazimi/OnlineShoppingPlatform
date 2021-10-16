@@ -31,13 +31,11 @@ function topCompany() {
         <h4 className="topCompany-container-title">Firmat me te njohura</h4>
         {data.map((c) => {
           return (
-            <Link to={`/Items/${c.title}`}>
-              <section className="topCompany-container-company">
-                <section className="topCompany-container-company-img_container">
-                  <img src={c.img} alt="top company img" />
-                </section>
-                <h4>{c.title}</h4>
+            <Link to={`/Items/${c.title}`} className="topCompany-container-company">
+              <section className="topCompany-container-company-img_container">
+                <img src={c.img} alt="top company img" />
               </section>
+              <h4>{c.title}</h4>
             </Link>
           );
         })}

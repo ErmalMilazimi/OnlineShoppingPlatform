@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./dashboard.scss";
 import { MDBDataTable } from "mdbreact";
 import { ToastContainer, toast } from "react-toastify";
 import Header from "../header/header";
@@ -91,10 +92,7 @@ const Dashboard = () => {
         email: user.email,
         actions: (
           <div>
-            <button
-              className="btn btn-danger"
-              onClick={() => onDelete(user.id, "User")}
-            >
+            <button className="btn btn-danger" onClick={() => onDelete(user.id, "User")}>
               Delete
             </button>
             <Link to={`/editUser/${user.id}`}>
@@ -160,10 +158,7 @@ const Dashboard = () => {
         rating: product.rating,
         actions: (
           <div>
-            <button
-              className="btn btn-danger"
-              onClick={() => onDelete(product.id, "Product")}
-            >
+            <button className="btn btn-danger" onClick={() => onDelete(product.id, "Product")}>
               Delete
             </button>
             <Link to={`/editProduct/${product.id}`}>
@@ -179,21 +174,20 @@ const Dashboard = () => {
     <div className="productList">
       <Header headerClassList={"productlist"} />
       <div className="container">
-        <button className="btn btn-secondary" onClick={() => seed()}>
-          Seed items
-        </button>
-        <button onClick={() => notify("Error")}>press</button>
-        <ToastContainer
-          position="top-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          draggable
-        />
-        <MDBDataTable responsive data={data} responsive hover />
-        <MDBDataTable responsive data={dataUsers} responsive hover />
+        <div className="dashboard-buttons-container">
+          <button className="btn btn-secondary dashboard-buttons-container-btn" onClick={() => seed()}>
+            Seed items
+          </button>
+          <Link className="btn btn-secondary dashboard-buttons-container-btn" to="/AddProduct">
+            Add Product
+          </Link>
+          <button onClick={() => notify("Error")} className="btn btn-secondary dashboard-buttons-container-btn">
+            Press
+          </button>
+        </div>
+        <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} draggable />
+        <MDBDataTable responsive data={data} responsive hover className="dashboard-table" />
+        <MDBDataTable responsive data={dataUsers} responsive hover className="dashboard-table" />
       </div>
     </div>
   );

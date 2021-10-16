@@ -1,0 +1,22 @@
+.dashboard-buttons-container {
+  padding: 15px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  &-btn {
+    display: block;
+    margin: 0 20px;
+    background-color: lightgray;
+    padding: 10px;
+    width: 150px;
+    border: none;
+    border-radius: 20px;
+  }
+}
+.dashboard-table {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 40px 0;
+  box-shadow: 0 0 20px 1px rgba(#000000, 0.7);
+}

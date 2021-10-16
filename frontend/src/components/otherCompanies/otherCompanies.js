@@ -50,7 +50,7 @@ function otherCompanies() {
       <section className="otherCompanies">
         {data.map((e, i) => {
           return (
-            <Link to={`/Items/${e.title}`}>
+            <Link to={`/Items/${e.title}`} className="otherCompanies-company">
               <Companies img={e.img} title={e.title} key={i} />
             </Link>
           );
@@ -61,12 +61,12 @@ function otherCompanies() {
 }
 const Companies = ({ img, title }) => {
   return (
-    <section className="otherCompanies-company">
+    <>
       <section className="topCompany-container-company-img_container">
         <img src={img} alt="other company img" />
       </section>
       <h4>{title}</h4>
-    </section>
+    </>
   );
 };
 export default otherCompanies;

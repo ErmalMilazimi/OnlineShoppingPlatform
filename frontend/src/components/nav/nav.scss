@@ -21,3 +21,53 @@ ul {
 .logreg.active {
   display: flex;
 }
+.megamenu-container {
+  position: relative;
+  cursor: pointer;
+
+  .megamenu {
+    position: absolute;
+    top: 100%;
+    padding-top: 26px;
+    .nav-link {
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.3s ease;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff !important;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .megamenu {
+      .nav-link {
+        transform: scaleY(1);
+      }
+    }
+  }
+}
+@media only screen and(max-width:991px) {
+  .megamenu-container {
+    .megamenu {
+      position: static;
+      padding-top: 10px;
+      display: none;
+      .nav-link {
+        transform: scaleY(0);
+        background: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .megamenu {
+        display: block;
+        .nav-link {
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+}
