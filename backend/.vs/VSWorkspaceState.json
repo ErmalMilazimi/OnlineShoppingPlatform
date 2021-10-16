@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\backend",
-    "\\Products.Core",
-    "\\Products.DB"
+    "\\backend"
   ],
-  "SelectedNode": "\\Products.Core\\Products.Core.csproj",
   "PreviewInSolutionExplorer": false
 }

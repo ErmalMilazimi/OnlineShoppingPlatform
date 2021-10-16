@@ -59,7 +59,7 @@ const ProductItem = ({ img, title, price }) => {
       </div>
       <div class="productList-container-item-bottom">
         <h3>{title}</h3>
-        <span>{price} €</span>
+        <span>{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(price)}</span>
       </div>
     </>
   );

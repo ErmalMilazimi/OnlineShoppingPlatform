@@ -149,7 +149,7 @@ const Dashboard = () => {
     ],
     rows: products.map((product) => {
       return {
-        image: <img height="50px" src={`/Images/${product.imagePath}`}></img>,
+        image: <Link to={`/productItem/${product.id}`}><img height="50px" src={`/Images/${product.imagePath}`}></img></Link>,
         name: product.name,
         description: product.description,
         category: product.category,
