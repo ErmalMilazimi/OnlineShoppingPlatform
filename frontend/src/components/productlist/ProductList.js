@@ -36,7 +36,7 @@ const ProductList = () => {
           </button>
         </div>
         <section className="productList-container">
-          {products.length != 0
+          {products.length !== 0
             ? products.map((product, i) => {
                 return (
                   <Link to={`/productItem/${product.id}`} className="productList-container-item">
@@ -55,11 +55,11 @@ const ProductItem = ({ img, title, price }) => {
   return (
     <>
       <div class="productList-container-item-top">
-        <img src={`/Images/${img}`}></img>
+        <img src={`/Images/${img}`} alt=""></img>
       </div>
       <div class="productList-container-item-bottom">
         <h3>{title}</h3>
-        <span>{new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(price)}</span>
+        <span>{new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(price)}</span>
       </div>
     </>
   );

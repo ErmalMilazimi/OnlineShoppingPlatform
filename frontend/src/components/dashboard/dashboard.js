@@ -20,11 +20,11 @@ const Dashboard = () => {
   }, []);
 
   const onDelete = async (id, type) => {
-    if (type == "User") {
+    if (type === "User") {
       await axios.delete(`/api/user/${id}`);
       notify("Success", "User have been deleted!");
       setUsers(users.map((user) => user.id != id));
-    } else if (type == "Product") {
+    } else if (type === "Product") {
       await axios.delete(`/products/${id}`);
       notify("Success", "Product have been deleted!");
       setProducts(products.map((product) => product.id != id));
@@ -149,7 +149,11 @@ const Dashboard = () => {
     ],
     rows: products.map((product) => {
       return {
-        image: <Link to={`/productItem/${product.id}`}><img height="50px" src={`/Images/${product.imagePath}`}></img></Link>,
+        image: (
+          <Link to={`/productItem/${product.id}`}>
+            <img height="50px" src={`/Images/${product.imagePath}`} alt=""></img>
+          </Link>
+        ),
         name: product.name,
         description: product.description,
         category: product.category,
@@ -186,8 +190,8 @@ const Dashboard = () => {
           </button>
         </div>
         <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} draggable />
-        <MDBDataTable responsive data={data} responsive hover className="dashboard-table" />
-        <MDBDataTable responsive data={dataUsers} responsive hover className="dashboard-table" />
+        <MDBDataTable responsive data={data} hover className="dashboard-table" />
+        <MDBDataTable responsive data={dataUsers} hover className="dashboard-table" />
       </div>
     </div>
   );
