@@ -1,4 +1,7 @@
 #navbar-menu {
+  position: absolute;
+  top: 0;
+  width: 100%;
   background: rgba(0, 0, 0, 0.5);
   z-index: 9999;
 }
@@ -46,6 +49,12 @@ ul {
         transform: scaleY(1);
       }
     }
+  }
+}
+.logReg-container {
+  display: none;
+  &.active {
+    display: block;
   }
 }
 @media only screen and(max-width:991px) {

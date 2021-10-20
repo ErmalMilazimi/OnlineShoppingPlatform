@@ -39,7 +39,7 @@ const ProductList = () => {
           {products.length !== 0
             ? products.map((product, i) => {
                 return (
-                  <Link to={`/productItem/${product.id}`} className="productList-container-item">
+                  <Link to={`/productItem/${product.id}`} className="productList-container-item" key={i}>
                     <ProductItem img={product.imagePath} title={product.name} price={product.price} key={i} />
                   </Link>
                 );

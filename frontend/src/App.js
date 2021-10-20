@@ -2,7 +2,7 @@ import { Suspense, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Product from "./components/Product";
 import "./main.scss";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer/footer";
 import Loader from "./components/loader/loader";
 import Items from "./Pages/ItemsPage";

@@ -80,7 +80,7 @@ const Nav = () => {
                 <span className="nav-link" to="/Items">
                   {`Hi ${user.name}`}
                 </span>
-                {user?.role == "Admin" && (
+                {user?.role === "Admin" && (
                   <li className="nav-item mx-1 megamenu">
                     <Link className="nav-link" to="/dashboard">
                       DASHBOARD

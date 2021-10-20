@@ -29,9 +29,9 @@ function topCompany() {
     <section className="container">
       <section className="topCompany-container">
         <h4 className="topCompany-container-title">Firmat me te njohura</h4>
-        {data.map((c) => {
+        {data.map((c, i) => {
           return (
-            <Link to={`/Items/${c.title}`} className="topCompany-container-company">
+            <Link to={`/Items/${c.title}`} className="topCompany-container-company" key={i}>
               <section className="topCompany-container-company-img_container">
                 <img src={c.img} alt="top company img" />
               </section>

@@ -50,7 +50,7 @@ function otherCompanies() {
       <section className="otherCompanies">
         {data.map((e, i) => {
           return (
-            <Link to={`/Items/${e.title}`} className="otherCompanies-company">
+            <Link to={`/Items/${e.title}`} className="otherCompanies-company" key={i}>
               <Companies img={e.img} title={e.title} key={i} />
             </Link>
           );
