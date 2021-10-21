@@ -5,8 +5,6 @@ import axios from "axios";
 import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import Zoom from "react-medium-image-zoom";
-import "react-medium-image-zoom/dist/styles.css";
 
 const ProductPage = () => {
   const user = useSelector((state) => state.auth.user);
@@ -21,18 +19,22 @@ const ProductPage = () => {
     const { data } = await axios.get("/products");
     setRelatedProds(data.filter((results) => results.category == res.data.category && results.id != res.data.id).splice(0, 4));
   }, [product]);
-  const props = { width: 500, height: 500, zoomWidth: 500, img: `/Images/${product.imagePath}` };
+
+  const [imgZoom, setImgZoom] = useState(false);
+
+  const zoomFunction = () => {
+    if (imgZoom) {
+      setImgZoom(false);
+    } else {
+      setImgZoom(true);
+    }
+  };
   return (
     <>
       <Header headerClassList={"productpage"} />
       <div className="container">
         <div className="product-page">
-          <div className="product-page-img">
-            <Zoom>
-              <img alt="that wanaka tree" src={`/Images/${product.imagePath}`} width="400" height="400" />
-            </Zoom>
-          </div>
-          {/* <div className="product-page-img" style={{ backgroundImage: `url(${`/Images/${product.imagePath}`})` }}></div> */}
+          <div className={imgZoom ? "product-page-img active" : "product-page-img"} style={{ backgroundImage: `url(${`/Images/${product.imagePath}`})` }} onClick={zoomFunction}></div>
           <div className="product-page-details">
             <h3 className="product-page-details-title">{product.name}</h3>
             <div className="star">{Array(product.rating).fill(<i className="fas fa-star"></i>)}</div>
