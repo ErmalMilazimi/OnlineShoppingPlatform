@@ -155,7 +155,7 @@ const Dashboard = () => {
           </Link>
         ),
         name: product.name,
-        description: product.description,
+        description: product.description.substring(0, 100) + "...",
         category: product.category,
         brand: product.brand,
         price: product.price,

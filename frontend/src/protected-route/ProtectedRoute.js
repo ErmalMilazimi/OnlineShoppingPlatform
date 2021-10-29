@@ -7,7 +7,9 @@ function ProtectedRoute({ component: Component, user, ...rest }) {
 
   useEffect(() => {
     if (!user) {
-      setLoading(false);
+      if (JSON.parse(localStorage.getItem("loggedIn")) == false) {
+        setLoading(true);
+      }
     } else {
       setLoading(true);
     }
@@ -19,7 +21,7 @@ function ProtectedRoute({ component: Component, user, ...rest }) {
         <Route
           {...rest}
           render={(props) => {
-            if (user?.role == 'Admin') {
+            if (user?.role == "Admin") {
               return <Component {...rest} {...props} />;
             } else {
               return (

@@ -143,6 +143,7 @@ const LogReg = (props) => {
           <label htmlFor="LogPassword">Password:</label>
           <input type="password" id="LogPassword" name="password" onChange={(e) => onChange(e)} value={password} />
           {errors.password && <div style={{ color: "red" }}>{errors.password}</div>}
+          {errors.auth && <div style={{ color: "red" }}>{errors.auth}</div>}
           <button type="submit">Log In</button>
         </form>
         <form onSubmit={(e) => handleLoginSubmit(e, "register")} className={regBtn ? "register active" : "register"}>
@@ -155,7 +156,6 @@ const LogReg = (props) => {
           <label htmlFor="regPassword">Password:</label>
           <input type="password" id="regPassword" name="password" onChange={(e) => onChange(e)} value={password} />
           {errors.password && <div style={{ color: "red" }}>{errors.password}</div>}
-          {errors.auth && <div style={{ color: "red" }}>{errors.auth}</div>}
           <button type="submit">Register</button>
         </form>
       </div>

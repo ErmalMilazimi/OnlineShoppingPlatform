@@ -7,6 +7,7 @@ export const signIn = (user) => async (dispatch) => {
       type: "SIGN_IN",
       user: res.data,
     });
+    localStorage.setItem("loggedIn", true);
     return res.data;
   } catch (error) {
     console.log(error);
@@ -33,7 +34,9 @@ export const loadUser = () => async (dispatch) => {
         type: "USER_LOADED",
         user: res.data,
       });
+      localStorage.setItem("loggedIn", true);
     } else {
+      localStorage.setItem("loggedIn", false);
       return null;
     }
   } catch (error) {
@@ -49,6 +52,7 @@ export const logout = () => async (dispatch) => {
       type: "LOGOUT",
       user: null,
     });
+    localStorage.setItem("loggedIn", false);
   } catch (error) {
     console.log(error);
   }
