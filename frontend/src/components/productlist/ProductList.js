@@ -8,11 +8,13 @@ import axios from "axios";
 const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState("");
+  const [filters, setFilters] = useState({});
+  const [filtered, setFiltered] = useState([]);
+  const [sort, setSort] = useState();
   const { filter } = useParams();
 
   useEffect(async () => {
     const res = await axios.get(`/products/${filter ? filter : ""}`);
-    console.log("res", res.data);
     setProducts(res.data);
   }, []);
 
@@ -25,6 +27,41 @@ const ProductList = () => {
     setProducts(data);
   };
 
+  useEffect(async () => {
+    products && setFiltered(
+      products.filter(item => 
+        Object.entries(filters).every(([key, value]) =>{
+            return item[key].includes(value)
+          }
+        )
+      )
+    );
+  }, [products, filters])
+
+  console.log(filters)
+
+  useEffect(async () => {
+    if(sort === "asc") {
+      setFiltered((prev) => 
+        [...prev].sort((a, b) => a.price - b.price)
+      )
+    } else if(sort === "desc") {
+      setFiltered((prev) =>
+        [...prev].sort((a, b) => b.price - a.price)
+      )
+    } else {
+      setFiltered(products);
+    }
+  }, [sort])
+
+  const handleFilters = (e) => {
+    setFilters({ ...filters, [e.target.name]: e.target.value});
+  }
+
+  const handleFilterPrice = (e) => {
+    setSort(e.target.value);
+  }
+
   return (
     <div className="productList">
       <Header headerClassList={"productlist"} />
@@ -34,10 +71,27 @@ const ProductList = () => {
           <button className="productList-container-searchBar-btn" onClick={() => filteredProducts()}>
             Search
           </button>
+          <select name='category' onChange={handleFilters}>
+            <option value=''>None</option>
+            <option>Shoes</option>
+            <option>T-Shirt</option>
+            <option>Jacket</option>
+          </select>
+          <select name='brand' onChange={handleFilters}>
+            <option value=''>None</option>
+            <option>ZARA</option>
+            <option>Nike</option>
+            <option>Adidas</option>
+          </select>
+          <select name='price' onChange={handleFilterPrice}>
+            <option value=''>None</option>
+            <option value="desc">Price (High to low)</option>
+            <option value="asc">Price (Low to high)</option>
+          </select>
         </div>
         <section className="productList-container">
-          {products.length !== 0
-            ? products.map((product, i) => {
+          {filtered.length !== 0
+            ? filtered.map((product, i) => {
                 return (
                   <Link to={`/productItem/${product.id}`} className="productList-container-item" key={i}>
                     <ProductItem img={product.imagePath} title={product.name} price={product.price} key={i} />

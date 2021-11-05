@@ -33,7 +33,7 @@ const App = () => {
             <Route exact path="/Items/:filter?" component={Items} />
             <Route exact path="/product" component={Product} />
             <Route exact path="/productItem/:id" component={ProductPage} />
-            <Route exact path="/AddProduct" component={AddProduct} />
+            <ProtectedRoute exact path="/AddProduct" component={AddProduct} user={user}/>
             <Route exact path="/about" component={AboutUs} />
             <ProtectedRoute exact path="/dashboard" component={Dashboard} user={user} />
           </Switch>
