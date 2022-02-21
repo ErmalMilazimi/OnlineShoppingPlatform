@@ -24,8 +24,10 @@
       &-btn {
         display: inline-block;
         width: 120px;
-        background-color: rgba(0, 0, 0, 0.3);
-        border: none;
+        height: 40px;
+        background-color: transparent;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        color: rgba(0, 0, 0, 0.5);
         border-radius: 30px;
         margin-left: 20px;
         transition: all 0.2s;
@@ -102,6 +104,29 @@
       }
     }
   }
+  &-container-inputsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    &-inputs {
+      margin: 10px;
+      select {
+        border: none;
+        border-bottom: 1px solid #9b9b9b;
+        color: #9b9b9b;
+        margin: 0 5px;
+        outline: none;
+        cursor: pointer;
+        padding: 5px 15px;
+        option {
+          color: #000;
+          border-radius: 0;
+        }
+      }
+    }
+  }
 }
 @media only screen and(max-width:1024px) {
   .productList {
@@ -116,6 +141,23 @@
 @media only screen and(max-width:580px) {
   .productList {
     &-container {
+      &-inputsContainer-inputs {
+        margin: 10px 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      &-inputsContainer-inputs:nth-child(2) {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      &-searchBar {
+        &-inputTxt {
+          width: auto;
+          padding: 7.5px 10px;
+        }
+      }
       &-item {
         width: 45%;
         height: 250px;

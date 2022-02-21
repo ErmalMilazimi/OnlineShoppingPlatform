@@ -28,66 +28,66 @@ const ProductList = () => {
   };
 
   useEffect(async () => {
-    products && setFiltered(
-      products.filter(item => 
-        Object.entries(filters).every(([key, value]) =>{
-            return item[key].includes(value)
-          }
+    products &&
+      setFiltered(
+        products.filter((item) =>
+          Object.entries(filters).every(([key, value]) => {
+            return item[key].includes(value);
+          })
         )
-      )
-    );
-  }, [products, filters])
+      );
+  }, [products, filters]);
 
-  console.log(filters)
+  console.log(filters);
 
   useEffect(async () => {
-    if(sort === "asc") {
-      setFiltered((prev) => 
-        [...prev].sort((a, b) => a.price - b.price)
-      )
-    } else if(sort === "desc") {
-      setFiltered((prev) =>
-        [...prev].sort((a, b) => b.price - a.price)
-      )
+    if (sort === "asc") {
+      setFiltered((prev) => [...prev].sort((a, b) => a.price - b.price));
+    } else if (sort === "desc") {
+      setFiltered((prev) => [...prev].sort((a, b) => b.price - a.price));
     } else {
       setFiltered(products);
     }
-  }, [sort])
+  }, [sort]);
 
   const handleFilters = (e) => {
-    setFilters({ ...filters, [e.target.name]: e.target.value});
-  }
+    setFilters({ ...filters, [e.target.name]: e.target.value });
+  };
 
   const handleFilterPrice = (e) => {
     setSort(e.target.value);
-  }
+  };
 
   return (
     <div className="productList">
       <Header headerClassList={"productlist"} />
       <div className="container">
-        <div className="productList-container-searchBar">
-          <input className="productList-container-searchBar-inputTxt" type="text" id="search" name="search" onChange={(e) => onSearch(e)} placeholder="Search products.." />
-          <button className="productList-container-searchBar-btn" onClick={() => filteredProducts()}>
-            Search
-          </button>
-          <select name='category' onChange={handleFilters}>
-            <option value=''>None</option>
-            <option>Shoes</option>
-            <option>T-Shirt</option>
-            <option>Jacket</option>
-          </select>
-          <select name='brand' onChange={handleFilters}>
-            <option value=''>None</option>
-            <option>ZARA</option>
-            <option>Nike</option>
-            <option>Adidas</option>
-          </select>
-          <select name='price' onChange={handleFilterPrice}>
-            <option value=''>None</option>
-            <option value="desc">Price (High to low)</option>
-            <option value="asc">Price (Low to high)</option>
-          </select>
+        <div className="productList-container-inputsContainer">
+          <div className="productList-container-inputsContainer-inputs">
+            <input className="productList-container-searchBar-inputTxt" type="text" id="search" name="search" onChange={(e) => onSearch(e)} placeholder="Search products.." />
+            <button className="productList-container-searchBar-btn" onClick={() => filteredProducts()}>
+              Search
+            </button>
+          </div>
+          <div className="productList-container-inputsContainer-inputs">
+            <select name="category" onChange={handleFilters}>
+              <option value="">None</option>
+              <option>Shoes</option>
+              <option>T-Shirt</option>
+              <option>Jacket</option>
+            </select>
+            <select name="brand" onChange={handleFilters}>
+              <option value="">None</option>
+              <option>ZARA</option>
+              <option>Nike</option>
+              <option>Adidas</option>
+            </select>
+            <select name="price" onChange={handleFilterPrice}>
+              <option value="">None</option>
+              <option value="desc">Price (High to low)</option>
+              <option value="asc">Price (Low to high)</option>
+            </select>
+          </div>
         </div>
         <section className="productList-container">
           {filtered.length !== 0
