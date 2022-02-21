@@ -60,14 +60,14 @@ const EditProductComponent = () => {
         const formData = new FormData();
         formData.append("Name",name);
         formData.append("ImagePath",imageEdited ? imageEdited : imagePath);
-        formData.append("Descroption",description);
+        formData.append("Description",description);
         formData.append("Category",category);
         formData.append("Brand",brand);
         formData.append("Price",price);
         formData.append("Rating",rating);
 
-        await axios.put(`/products/${value.id}`);
-        history.push(`/productItem${value.id}`);
+        await axios.put(`/products/${value.id}`, formData);
+        history.push(`/productItem/${value.id}`);
     }
     return (
         <div className="main-container">
