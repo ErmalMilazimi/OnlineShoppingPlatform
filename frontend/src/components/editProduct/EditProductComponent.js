@@ -5,7 +5,7 @@ import Img from "../../assets/img/logoTxt.svg";
 import axios from "axios";
 
 const EditProductComponent = () => {
-    const [value, setValue] = useState({
+    const [value, setValues] = useState({
         name: '',
         imagePath: null,
         imageSrc: null,
@@ -62,7 +62,7 @@ const EditProductComponent = () => {
         formData.append("ImagePath",imageEdited ? imageEdited : imagePath);
         formData.append("Descroption",description);
         formData.append("Category",category);
-        formData.append("Brand"brand);
+        formData.append("Brand",brand);
         formData.append("Price",price);
         formData.append("Rating",rating);
 

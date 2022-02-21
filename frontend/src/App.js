@@ -15,6 +15,7 @@ import { loadUser } from "./actions/auth";
 import AboutUs from "./Pages/AboutUs";
 import ProtectedRoute from "./protected-route/ProtectedRoute";
 import Dashboard from "./components/dashboard/dashboard";
+import EditProductComponent from "../../../editProduct/EditProductComponent";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const App = () => {
             <Route exact path="/Items/:filter?" component={Items} />
             <Route exact path="/product" component={Product} />
             <Route exact path="/productItem/:id" component={ProductPage} />
+            <ProtectedRoute exact path="/editProduct/:id" component={EditProductComponent} />
             <ProtectedRoute exact path="/AddProduct" component={AddProduct} user={user}/>
             <Route exact path="/about" component={AboutUs} />
             <ProtectedRoute exact path="/dashboard" component={Dashboard} user={user} />
