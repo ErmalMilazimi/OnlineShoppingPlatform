@@ -2,19 +2,47 @@ import React from "react";
 import "./contactUs.scss";
 import Nav from "../nav/nav";
 import Img from "../../assets/img/logoTxt.svg";
-
+import emailjs from '@emailjs/browser';
+import { toast, ToastContainer } from "react-toastify";
+ 
 const contactUs = () => {
+ 
+  const notify = (type, message) => {
+    console.log("click");
+    switch (type) {
+      case "Success":
+        toast.success(message ? message : "Success!");
+        break;
+      case "Error":
+        toast.error(message ? message : "Error!");
+        break;
+      default:
+        toast("Null");
+    }
+  };
+ 
+  const sendMail = async (e) => {
+    e.preventDefault();
+ 
+    const email = emailjs.sendForm('service_ydfvlil', 'template_sav74ds', e.target, 'user_MufoJ9VtBjArbwmM4MAWr')
+ 
+    if(email) {
+      notify("Success", "Mail Sent Successfully!");
+    }
+  }
+ 
   return (
     <div className="main-container">
       <div className="blur-background"></div>
       <Nav />
+      <ToastContainer position="top-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} draggable />
       <div className="content-container">
         <div class="contact-form-container-up">
           <img src={Img} alt="form img" />
         </div>
         <div class="contact-form-container-down">
           <div class="contact-form-container left">
-            <form class="add-form">
+            <form onSubmit={(e) => sendMail(e)} class="add-form">
               <label for="name">Username:</label>
               <input className="add-form-inputs" type="text" name="name" id="name" />
               <label for="email">Email:</label>
@@ -44,5 +72,5 @@ const contactUs = () => {
     </div>
   );
 };
-
+ 
 export default contactUs;
