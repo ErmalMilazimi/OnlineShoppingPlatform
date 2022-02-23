@@ -9,13 +9,14 @@ import Items from "./Pages/ItemsPage";
 import ProductPage from "./Pages/ProductDetails";
 import Home from "./Pages/Home";
 import AddProduct from "./Pages/AddProduct";
-
+import ContactUs from "./components/contactUs/contactUs";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "./actions/auth";
 import AboutUs from "./Pages/AboutUs";
 import ProtectedRoute from "./protected-route/ProtectedRoute";
 import Dashboard from "./components/dashboard/dashboard";
 import EditProductComponent from "./components/editProduct/EditProductComponent";
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -37,6 +38,7 @@ const App = () => {
             <ProtectedRoute exact path="/editProduct/:id" component={EditProductComponent} user={user}/>
             <ProtectedRoute exact path="/AddProduct" component={AddProduct} user={user}/>
             <Route exact path="/about" component={AboutUs} />
+            <Route exact path="/contactus" component={ContactUs} />
             <ProtectedRoute exact path="/dashboard" component={Dashboard} user={user} />
           </Switch>
           <Footer />

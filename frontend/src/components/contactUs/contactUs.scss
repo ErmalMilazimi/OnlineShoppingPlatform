@@ -1,0 +1,111 @@
+.main-container {
+  .nav {
+    position: absolute;
+  }
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  margin-bottom: -50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .blur-background {
+    position: absolute;
+    inset: 0;
+    background-image: url("../../assets/img/contactus.jpg");
+    background-position: unset;
+    background-size: 600px;
+    background-repeat: repeat;
+    filter: blur(5px);
+    z-index: -1;
+  }
+  .content-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    top: 20px;
+    padding: 20px 50px 50px 50px;
+    border-radius: 10px;
+    margin: 100px 50px;
+    width: fit-content;
+    background-color: #fff;
+    .contact-form-container-up {
+      flex-basis: 70%;
+      img {
+        width: 300px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .contact-form-container-down {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      justify-content: space-around;
+    }
+    .contact-form-container,
+    .socialMedia-container {
+      width: 300px;
+    }
+    .contact-form-container {
+      .add-form {
+        label {
+          display: inline-block;
+          margin: 0;
+          margin-top: 30px;
+          cursor: pointer;
+        }
+        &-inputs {
+          border: none;
+          border-bottom: 1px solid gray;
+          display: block;
+          width: 100%;
+          padding: 5px 0;
+          outline: none;
+        }
+        textarea {
+          border: 1px solid gray;
+          padding: 5px;
+          min-height: 120px;
+        }
+        input[type="submit"] {
+          display: block;
+          margin: 0 auto;
+          border: none;
+          margin-top: 20px;
+          width: 150px;
+          padding: 10px;
+          border-radius: 30px;
+        }
+      }
+    }
+    .socialMedia-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      &-title {
+        font-size: 18px;
+        margin: 0;
+        &.second-title {
+          margin-top: 20px;
+        }
+      }
+      p {
+        font-size: 14px;
+        margin: 3px 0;
+      }
+      hr {
+        width: 50%;
+        height: 0;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 830px) {
+  .socialMedia-container {
+    margin-top: 30px;
+  }
+}
